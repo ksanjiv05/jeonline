@@ -677,6 +677,7 @@
     setChk('#set-strict', p.strict !== false);
     setChk('#set-fullscreen', p.fullscreen !== false);
     setChk('#set-instructions', p.showInstructions !== false);
+    setChk('#set-calc', p.calculator !== false);
     setChk('#set-shuffle-q', p.shuffleQ);
     setChk('#set-shuffle-o', p.shuffleO);
     $('#set-duration').value = DEFAULTS.duration;
@@ -687,7 +688,7 @@
   function savePrefs(st) {
     store.set(PREFS_KEY, {
       name: st.name, roll: st.roll, strict: st.strict, fullscreen: st.fullscreen,
-      showInstructions: st.showInstructions, shuffleQ: st.shuffleQ, shuffleO: st.shuffleO
+      showInstructions: st.showInstructions, calculator: st.calculator, shuffleQ: st.shuffleQ, shuffleO: st.shuffleO
     });
   }
 
@@ -701,6 +702,7 @@
     setChk('#set-strict', st.strict);
     setChk('#set-fullscreen', st.fullscreen);
     setChk('#set-instructions', st.showInstructions);
+    setChk('#set-calc', st.calculator !== false);
     setChk('#set-shuffle-q', st.shuffleQ);
     setChk('#set-shuffle-o', st.shuffleO);
   }
@@ -731,6 +733,7 @@
       strict: chk('#set-strict'),
       fullscreen: chk('#set-fullscreen'),
       showInstructions: chk('#set-instructions'),
+      calculator: chk('#set-calc'),
       shuffleQ: chk('#set-shuffle-q'),
       shuffleO: chk('#set-shuffle-o')
     };
@@ -823,6 +826,7 @@
       <ol>
         ${li(`The test lasts <b>${fmtNum(st.duration)} minutes</b>. The countdown timer at the top right of the screen shows the time left. When it reaches zero, the test is submitted automatically; you don't need to click Submit.`)}
         ${li(`The Question Palette on the right of the screen shows the status of each question:<ul class="legend-list">${legend}</ul>`)}
+        ${st.calculator !== false ? li('Click <b>Calculator</b> at the top of the screen to open the on-screen scientific calculator. You can drag it by its title bar.') : ''}
         ${li('<b>Marked for Review</b> means you want to look at the question again. If a question is answered <i>and</i> marked for review, its answer will be evaluated.')}
       </ol>
       <h3>Navigating to a question</h3>
@@ -920,6 +924,8 @@
     $('#ex-cand').innerHTML = candidateHtml();
     $('#ex-lang-wrap').hidden = !ex.hasHindi;
     $('#ex-lang').value = session.lang;
+    $('#ex-calc').hidden = session.settings.calculator === false;
+    closeCalc();
     session.lastInSec[ex.questions[session.cur].sec] = session.cur;
     qEnteredAt = Date.now();
     renderQuestion();
@@ -1061,6 +1067,209 @@
   function openPalette() { $('#ex-palette').classList.add('open'); $('#ex-backdrop').hidden = false; }
   function closePalette() { $('#ex-palette').classList.remove('open'); $('#ex-backdrop').hidden = true; }
 
+  /* ---------- Scientific calculator ---------- */
+  const CALC_NAMES = ['sin⁻¹', 'cos⁻¹', 'tan⁻¹', 'sin', 'cos', 'tan', 'log', 'ln', 'Ans', 'π', 'e', '√'];
+  // [label, text to insert or action, style class]
+  const CALC_KEYS = [
+    ['Deg', '@deg', 'fn'], ['(', '(', 'fn'], [')', ')', 'fn'], ['⌫', '@back', 'del'], ['C', '@clear', 'del'],
+    ['sin', 'sin(', 'fn'], ['cos', 'cos(', 'fn'], ['tan', 'tan(', 'fn'], ['π', 'π', 'fn'], ['e', 'e', 'fn'],
+    ['sin⁻¹', 'sin⁻¹(', 'fn'], ['cos⁻¹', 'cos⁻¹(', 'fn'], ['tan⁻¹', 'tan⁻¹(', 'fn'], ['log', 'log(', 'fn'], ['ln', 'ln(', 'fn'],
+    ['x²', '^2', 'fn'], ['xʸ', '^', 'fn'], ['√', '√(', 'fn'], ['n!', '!', 'fn'], ['1/x', '@inv', 'fn'],
+    ['7', '7', ''], ['8', '8', ''], ['9', '9', ''], ['÷', '÷', 'op'], ['%', '%', 'op'],
+    ['4', '4', ''], ['5', '5', ''], ['6', '6', ''], ['×', '×', 'op'], ['Ans', 'Ans', 'fn'],
+    ['1', '1', ''], ['2', '2', ''], ['3', '3', ''], ['−', '−', 'op'], ['EXP', 'E', 'fn'],
+    ['0', '0', ''], ['.', '.', ''], ['+', '+', 'op'], ['=', '@eq', 'eq']
+  ];
+  const calc = { expr: '', res: '0', ans: 0, deg: true, done: false };
+
+  /** Evaluate a calculator expression with a small parser (no eval). Throws on any error. */
+  function calcEval(src, deg, ans) {
+    const toks = [];
+    let i = 0;
+    while (i < src.length) {
+      const ch = src[i];
+      if (ch === ' ') { i++; continue; }
+      const m = /^(?:\d+\.?\d*|\.\d+)(?:E[+\-−]?\d+)?/.exec(src.slice(i));
+      if (m) { toks.push({ t: 'n', v: Number(m[0].replace('−', '-')) }); i += m[0].length; continue; }
+      const name = CALC_NAMES.find(n => src.startsWith(n, i));
+      if (name) { toks.push({ t: 'id', v: name }); i += name.length; continue; }
+      const op = { '−': '-', '×': '*', '÷': '/' }[ch] || ch;
+      if (!'+-*/^()!%'.includes(op)) throw new Error('syntax');
+      toks.push({ t: op });
+      i++;
+    }
+    let p = 0;
+    const peek = () => toks[p];
+    const eat = t => (peek() && peek().t === t ? (p++, true) : false);
+    const toRad = x => (deg ? x * Math.PI / 180 : x);
+    const fromRad = x => (deg ? x * 180 / Math.PI : x);
+    const tidy = x => (Math.abs(x) < 1e-12 ? 0 : x);
+    const fns = {
+      'sin': x => tidy(Math.sin(toRad(x))),
+      'cos': x => tidy(Math.cos(toRad(x))),
+      'tan': x => { if (Math.abs(Math.cos(toRad(x))) < 1e-12) throw new Error('math'); return tidy(Math.tan(toRad(x))); },
+      'sin⁻¹': x => fromRad(Math.asin(x)),
+      'cos⁻¹': x => fromRad(Math.acos(x)),
+      'tan⁻¹': x => fromRad(Math.atan(x)),
+      'log': x => Math.log10(x),
+      'ln': x => Math.log(x),
+      '√': x => Math.sqrt(x)
+    };
+    const fact = n => {
+      if (n < 0 || n > 170 || !Number.isInteger(n)) throw new Error('math');
+      let r = 1;
+      for (let k = 2; k <= n; k++) r *= k;
+      return r;
+    };
+    const close = () => { if (!eat(')') && peek()) throw new Error('syntax'); };   // a missing final ")" is allowed
+    function expr() {
+      let v = term();
+      for (;;) {
+        if (eat('+')) v += term();
+        else if (eat('-')) v -= term();
+        else return v;
+      }
+    }
+    function term() {
+      let v = unary();
+      for (;;) {
+        const t = peek();
+        if (eat('*')) v *= unary();
+        else if (eat('/')) v /= unary();
+        else if (t && (t.t === 'n' || t.t === 'id' || t.t === '(')) v *= power();   // 2π, 3(4+1)
+        else return v;
+      }
+    }
+    function unary() {
+      if (eat('-')) return -unary();
+      if (eat('+')) return unary();
+      return power();
+    }
+    function power() {
+      const v = postfix();
+      return eat('^') ? Math.pow(v, unary()) : v;
+    }
+    function postfix() {
+      let v = primary();
+      for (;;) {
+        if (eat('!')) v = fact(v);
+        else if (eat('%')) v /= 100;
+        else return v;
+      }
+    }
+    function primary() {
+      const t = peek();
+      if (!t) throw new Error('syntax');
+      p++;
+      if (t.t === 'n') return t.v;
+      if (t.t === '(') { const v = expr(); close(); return v; }
+      if (t.t === 'id') {
+        if (t.v === 'π') return Math.PI;
+        if (t.v === 'e') return Math.E;
+        if (t.v === 'Ans') return ans;
+        if (!eat('(')) throw new Error('syntax');
+        const v = expr();
+        close();
+        return fns[t.v](v);
+      }
+      throw new Error('syntax');
+    }
+    const v = expr();
+    if (p < toks.length || !isFinite(v)) throw new Error('math');
+    return v;
+  }
+
+  function calcRender() {
+    $('#calc-expr').textContent = calc.expr;
+    $('#calc-res').textContent = calc.res;
+    const d = $('#calc-keys [data-k="@deg"]');
+    if (d) d.textContent = calc.deg ? 'Deg' : 'Rad';
+  }
+
+  function calcPress(k) {
+    if (k === '@clear') { calc.expr = ''; calc.res = '0'; calc.done = false; }
+    else if (k === '@deg') { calc.deg = !calc.deg; }
+    else if (k === '@back') {
+      if (calc.done) { calc.expr = ''; calc.done = false; }
+      else {
+        const fn = CALC_NAMES.map(n => n + '(').concat(CALC_NAMES).find(n => calc.expr.endsWith(n));
+        calc.expr = calc.expr.slice(0, -(fn ? fn.length : 1));
+      }
+    }
+    else if (k === '@eq') {
+      if (!calc.expr) return;
+      try {
+        const v = calcEval(calc.expr, calc.deg, calc.ans);
+        calc.ans = v;
+        calc.res = String(parseFloat(v.toPrecision(10))).replace('-', '−');
+        calc.done = true;
+      } catch (e) {
+        calc.res = 'Error';
+      }
+    }
+    else if (k === '@inv') {
+      const inner = calc.done ? 'Ans' : calc.expr;
+      if (!inner) return;
+      calc.expr = '1÷(' + inner + ')';
+      calc.done = false;
+    }
+    else {
+      if (calc.done) {             // after "=": an operator continues from the answer, anything else starts fresh
+        calc.expr = /^[+−×÷^!%]/.test(k) ? 'Ans' : '';
+        calc.done = false;
+      }
+      calc.expr += k;
+    }
+    calcRender();
+  }
+
+  function openCalc() { $('#calc').hidden = false; calcRender(); $('#calc').focus(); }
+  function closeCalc() { $('#calc').hidden = true; }
+
+  function bindCalc() {
+    const panel = $('#calc');
+    $('#calc-keys').innerHTML = CALC_KEYS.map(([label, k, cls]) =>
+      `<button class="ck ${cls}" data-k="${escapeHtml(k)}">${escapeHtml(label)}</button>`).join('');
+    $('#calc-keys').addEventListener('click', e => {
+      const b = e.target.closest('.ck');
+      if (b) calcPress(b.dataset.k);
+    });
+    $('#ex-calc').addEventListener('click', () => (panel.hidden ? openCalc() : closeCalc()));
+    $('#calc-close').addEventListener('click', closeCalc);
+
+    // Keyboard input while the calculator has focus.
+    const keyMap = { '*': '×', '/': '÷', '-': '−', 'Enter': '@eq', '=': '@eq', 'Backspace': '@back', 'Delete': '@clear', 'c': '@clear', 'C': '@clear', 'p': 'π' };
+    panel.addEventListener('keydown', e => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'Escape') { e.stopPropagation(); closeCalc(); return; }
+      const k = keyMap[e.key] || (/^[0-9.+^()!%e]$/.test(e.key) ? e.key : null);
+      if (!k) return;
+      e.preventDefault();
+      e.stopPropagation();
+      calcPress(k);
+    });
+
+    // Drag by the title bar.
+    const head = $('#calc-head');
+    let drag = null;
+    head.addEventListener('pointerdown', e => {
+      if (e.target.closest('.calc-close')) return;
+      const r = panel.getBoundingClientRect();
+      drag = { dx: e.clientX - r.left, dy: e.clientY - r.top };
+      if (head.setPointerCapture) head.setPointerCapture(e.pointerId);
+    });
+    head.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const x = Math.max(0, Math.min(e.clientX - drag.dx, window.innerWidth - panel.offsetWidth));
+      const y = Math.max(0, Math.min(e.clientY - drag.dy, window.innerHeight - 40));
+      panel.style.left = x + 'px';
+      panel.style.top = y + 'px';
+      panel.style.right = 'auto';
+      panel.style.bottom = 'auto';
+    });
+    ['pointerup', 'pointercancel'].forEach(ev => head.addEventListener(ev, () => { drag = null; }));
+  }
+
   /* ---------- Timer ---------- */
   function startTimer() {
     stopTimer();
@@ -1154,6 +1363,7 @@
     exitFullscreen();
     closeModal();
     closePalette();
+    closeCalc();
     showResult();
     if (auto) {
       openModal({
@@ -1366,6 +1576,7 @@
     bindSetup();
     bindInstructions();
     bindExam();
+    bindCalc();
     bindResult();
     bindGlobal();
     applyPrefs();

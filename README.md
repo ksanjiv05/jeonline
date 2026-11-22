@@ -9,6 +9,7 @@ A computer based test (CBT) environment for SSC Junior Engineer practice. You gi
 - **Save & Next**, **Mark for Review & Next**, **Clear Response** and **Back** buttons.
 - Real-exam save rule: an answer counts only after **Save & Next** or **Mark for Review & Next**. You can switch this off on the start screen.
 - Full screen mode; right-click and copying are blocked during the test.
+- An on-screen scientific calculator (trig in degrees or radians, log, ln, powers, roots, factorial). Drag it by its title bar. You can switch it off on the start screen.
 - An English/Hindi switch when your questions include Hindi.
 - Recovery after a refresh. Progress is saved in the browser and the timer keeps running.
 - A result page with the score, accuracy, a section-wise table, time spent per question, a full answer review with explanations, and Print / Save as PDF.

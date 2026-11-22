@@ -1,6 +1,11 @@
 {
   "tests": [
     {
+      "file": "tests/engineering-mechanics-numerical-01.json",
+      "title": "Engineering Mechanics: Numerical Practice Set 1 (40 questions)",
+      "description": "Statics, friction, centroid and moment of inertia, kinematics, kinetics · 45 minutes · +1 / −0.25"
+    },
+    {
       "file": "tests/sample-ssc-je-civil.json",
       "title": "SSC JE Civil: Sample Mini Mock (30 questions)",
       "description": "Reasoning, General Awareness and Civil Engineering · 20 minutes · +1 / −0.25"

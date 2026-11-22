@@ -89,6 +89,8 @@
             <span><b>Real exam save mode</b>: an answer counts only after you click <i>Save &amp; Next</i> or <i>Mark for Review &amp; Next</i></span></label>
           <label class="check"><input type="checkbox" id="set-fullscreen" checked>
             <span>Open the test in full screen</span></label>
+          <label class="check"><input type="checkbox" id="set-calc" checked>
+            <span>Show an on-screen scientific calculator during the test</span></label>
           <label class="check"><input type="checkbox" id="set-instructions" checked>
             <span>Show the instructions page before the test</span></label>
           <label class="check"><input type="checkbox" id="set-shuffle-q">
@@ -141,6 +143,7 @@
       <div class="exam-title" id="ex-title"></div>
       <div class="exam-top-actions">
         <button class="top-btn" id="ex-instr">Instructions</button>
+        <button class="top-btn" id="ex-calc" aria-controls="calc">Calculator</button>
         <button class="top-btn" id="ex-fullscreen">Full screen</button>
         <button class="top-btn palette-toggle" id="ex-palette-toggle" aria-controls="ex-palette">Questions</button>
       </div>
@@ -193,6 +196,19 @@
         <div class="pal-foot"><button class="btn btn-submit" id="ex-submit">Submit</button></div>
       </aside>
       <div class="pal-backdrop" id="ex-backdrop" hidden></div>
+    </div>
+
+    <!-- On-screen scientific calculator (draggable) -->
+    <div class="calc" id="calc" hidden tabindex="-1" role="dialog" aria-label="Scientific calculator">
+      <div class="calc-head" id="calc-head">
+        <span>Scientific Calculator</span>
+        <button class="calc-close" id="calc-close" aria-label="Close calculator">×</button>
+      </div>
+      <div class="calc-screen">
+        <div class="calc-expr" id="calc-expr"></div>
+        <div class="calc-res" id="calc-res">0</div>
+      </div>
+      <div class="calc-keys" id="calc-keys"></div>
     </div>
   </section>
 

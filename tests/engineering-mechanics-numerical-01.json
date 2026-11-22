@@ -1,0 +1,514 @@
+{
+  "title": "Engineering Mechanics: Numerical Practice Set 1",
+  "duration": 45,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical. Keep rough paper ready; no calculator is allowed in the real exam.",
+    "Take g = 10 m/s² wherever the question says so."
+  ],
+  "sections": [
+    {
+      "name": "Statics: Forces, Moments & Machines",
+      "questions": [
+        {
+          "id": "S1",
+          "question": "Two forces of 30 N and 40 N act at a point at right angles to each other. The magnitude of their resultant is:",
+          "options": [
+            "10 N",
+            "35 N",
+            "50 N",
+            "70 N"
+          ],
+          "answer": "C",
+          "explanation": "R = √(30² + 40²) = √2500 = 50 N."
+        },
+        {
+          "id": "S2",
+          "question": "Two forces of 20 N each act at a point with an angle of 120° between them. The magnitude of their resultant is:",
+          "options": [
+            "20 N",
+            "34.64 N",
+            "40 N",
+            "10 N"
+          ],
+          "answer": "A",
+          "explanation": "R = √(P² + Q² + 2PQ cos θ) = √(400 + 400 + 2 × 400 × (−0.5)) = √400 = 20 N."
+        },
+        {
+          "id": "S3",
+          "question": "Forces of 10 N and 20 N act at a point with an angle of 60° between them. The magnitude of their resultant is approximately:",
+          "options": [
+            "22.36 N",
+            "30.00 N",
+            "17.32 N",
+            "26.46 N"
+          ],
+          "answer": "D",
+          "explanation": "R = √(100 + 400 + 2 × 10 × 20 × cos 60°) = √700 ≈ 26.46 N."
+        },
+        {
+          "id": "S4",
+          "question": "The maximum and minimum resultants of two forces are 14 N and 2 N. If the two forces act at right angles, their resultant is:",
+          "options": [
+            "12 N",
+            "10 N",
+            "16 N",
+            "8 N"
+          ],
+          "answer": "B",
+          "explanation": "P + Q = 14 and P − Q = 2, so P = 8 N and Q = 6 N. At right angles, R = √(8² + 6²) = 10 N."
+        },
+        {
+          "id": "S5",
+          "question": "A weight of 100 N hangs from two strings, each making an angle of 30° with the horizontal. The tension in each string is:",
+          "options": [
+            "50 N",
+            "57.74 N",
+            "100 N",
+            "200 N"
+          ],
+          "answer": "C",
+          "explanation": "Vertical equilibrium: 2T sin 30° = 100, so T = 100 / (2 × 0.5) = 100 N."
+        },
+        {
+          "id": "S6",
+          "question": "A force of 100 N is applied at the free end of a 2 m long lever, at an angle of 30° to the lever. The moment of the force about the pivot is:",
+          "options": [
+            "200 N·m",
+            "173.2 N·m",
+            "50 N·m",
+            "100 N·m"
+          ],
+          "answer": "D",
+          "explanation": "M = F × d × sin θ = 100 × 2 × sin 30° = 100 N·m."
+        },
+        {
+          "id": "S7",
+          "question": "Two equal and opposite parallel forces of 25 N act 0.2 m apart. The moment of the couple is:",
+          "options": [
+            "5 N·m",
+            "10 N·m",
+            "125 N·m",
+            "2.5 N·m"
+          ],
+          "answer": "A",
+          "explanation": "Moment of a couple = force × arm = 25 × 0.2 = 5 N·m."
+        },
+        {
+          "id": "S8",
+          "question": "A simply supported beam AB of span 6 m carries a point load of 12 kN at 2 m from support A. The reaction at support B is:",
+          "options": [
+            "8 kN",
+            "6 kN",
+            "4 kN",
+            "2 kN"
+          ],
+          "answer": "C",
+          "explanation": "Taking moments about A: R_B × 6 = 12 × 2, so R_B = 4 kN (and R_A = 8 kN)."
+        },
+        {
+          "id": "S9",
+          "question": "A simply supported beam of span 4 m carries a uniformly distributed load of 5 kN/m over its whole span. The reaction at each support is:",
+          "options": [
+            "5 kN",
+            "10 kN",
+            "20 kN",
+            "2.5 kN"
+          ],
+          "answer": "B",
+          "explanation": "Total load = 5 × 4 = 20 kN, shared equally by symmetry: 10 kN at each support."
+        },
+        {
+          "id": "S10",
+          "question": "In a lifting machine, an effort of 100 N lifts a load of 600 N. If the velocity ratio is 8, the efficiency of the machine is:",
+          "options": [
+            "60%",
+            "133%",
+            "80%",
+            "75%"
+          ],
+          "answer": "D",
+          "explanation": "MA = 600/100 = 6. Efficiency = MA / VR = 6/8 = 0.75 = 75%."
+        }
+      ]
+    },
+    {
+      "name": "Friction, Centroid & Moment of Inertia",
+      "questions": [
+        {
+          "id": "F1",
+          "question": "A block weighing 200 N rests on a rough horizontal surface with a coefficient of static friction of 0.3. The minimum horizontal force needed to just move the block is:",
+          "options": [
+            "30 N",
+            "60 N",
+            "66.7 N",
+            "200 N"
+          ],
+          "answer": "B",
+          "explanation": "F = μN = 0.3 × 200 = 60 N."
+        },
+        {
+          "id": "F2",
+          "question": "The coefficient of friction between a block and an inclined plane is 1/√3. The angle of repose is:",
+          "options": [
+            "30°",
+            "45°",
+            "60°",
+            "15°"
+          ],
+          "answer": "A",
+          "explanation": "tan α = μ = 1/√3, so α = 30°."
+        },
+        {
+          "id": "F3",
+          "question": "A block of mass 10 kg rests on a plane inclined at 30° to the horizontal. The coefficient of friction is 0.2. Taking g = 10 m/s², the force parallel to the plane needed to just move the block up the plane is approximately:",
+          "options": [
+            "50.00 N",
+            "32.68 N",
+            "67.32 N",
+            "70.00 N"
+          ],
+          "answer": "C",
+          "explanation": "P = mg sin θ + μ mg cos θ = 100 × 0.5 + 0.2 × 100 × 0.866 = 50 + 17.32 = 67.32 N."
+        },
+        {
+          "id": "F4",
+          "question": "A body weighing 500 N lies on a rough horizontal surface (μ = 0.25). It is pulled by a force P inclined at 30° above the horizontal. The value of P that just moves the body is approximately:",
+          "options": [
+            "62.5 N",
+            "144.3 N",
+            "168.7 N",
+            "126.1 N"
+          ],
+          "answer": "D",
+          "explanation": "P cos 30° = μ(W − P sin 30°), so P = μW / (cos 30° + μ sin 30°) = 125 / (0.866 + 0.125) ≈ 126.1 N."
+        },
+        {
+          "id": "F5",
+          "question": "The height of a triangular lamina is 9 cm. The distance of its centroid from the base is:",
+          "options": [
+            "3 cm",
+            "4.5 cm",
+            "6 cm",
+            "2.25 cm"
+          ],
+          "answer": "A",
+          "explanation": "The centroid of a triangle is at h/3 from the base: 9/3 = 3 cm."
+        },
+        {
+          "id": "F6",
+          "question": "The centroid of a semicircular lamina of radius 30 mm lies on its axis of symmetry at a distance from the diameter of approximately:",
+          "options": [
+            "15.00 mm",
+            "12.73 mm",
+            "19.10 mm",
+            "10.00 mm"
+          ],
+          "answer": "B",
+          "explanation": "ȳ = 4r / (3π) = 4 × 30 / (3π) ≈ 12.73 mm."
+        },
+        {
+          "id": "F7",
+          "question": "A rectangular section is 6 cm wide and 10 cm deep. Its moment of inertia about the centroidal axis parallel to the width is:",
+          "options": [
+            "180 cm⁴",
+            "2000 cm⁴",
+            "500 cm⁴",
+            "1000 cm⁴"
+          ],
+          "answer": "C",
+          "explanation": "I = bd³/12 = 6 × 10³ / 12 = 500 cm⁴."
+        },
+        {
+          "id": "F8",
+          "question": "A rectangular section is 6 cm wide and 10 cm deep. Its moment of inertia about its base (the 6 cm side) is:",
+          "options": [
+            "500 cm⁴",
+            "720 cm⁴",
+            "1500 cm⁴",
+            "2000 cm⁴"
+          ],
+          "answer": "D",
+          "explanation": "By the parallel axis theorem, I = bd³/12 + A(d/2)² = 500 + 60 × 25 = 2000 cm⁴ (= bd³/3)."
+        },
+        {
+          "id": "F9",
+          "question": "The moment of inertia of a circular section of diameter 20 mm about its diameter is approximately:",
+          "options": [
+            "7854 mm⁴",
+            "15708 mm⁴",
+            "3927 mm⁴",
+            "31416 mm⁴"
+          ],
+          "answer": "A",
+          "explanation": "I = πd⁴/64 = π × 20⁴ / 64 ≈ 7854 mm⁴."
+        },
+        {
+          "id": "F10",
+          "question": "The polar moment of inertia of a solid circular section of diameter 20 mm is approximately:",
+          "options": [
+            "7854 mm⁴",
+            "15708 mm⁴",
+            "31416 mm⁴",
+            "3927 mm⁴"
+          ],
+          "answer": "B",
+          "explanation": "J = πd⁴/32 = π × 20⁴ / 32 ≈ 15708 mm⁴, twice the moment of inertia about a diameter."
+        }
+      ]
+    },
+    {
+      "name": "Kinematics",
+      "questions": [
+        {
+          "id": "K1",
+          "question": "A car starts from rest and accelerates uniformly to 20 m/s in 10 s. The distance covered in this time is:",
+          "options": [
+            "200 m",
+            "50 m",
+            "100 m",
+            "150 m"
+          ],
+          "answer": "C",
+          "explanation": "a = 20/10 = 2 m/s². s = ½at² = ½ × 2 × 10² = 100 m."
+        },
+        {
+          "id": "K2",
+          "question": "A train moving at 72 km/h is brought to rest with uniform retardation over a distance of 200 m. The retardation is:",
+          "options": [
+            "1 m/s²",
+            "2 m/s²",
+            "0.5 m/s²",
+            "12.96 m/s²"
+          ],
+          "answer": "A",
+          "explanation": "72 km/h = 20 m/s. v² = u² − 2as gives a = 20² / (2 × 200) = 1 m/s²."
+        },
+        {
+          "id": "K3",
+          "question": "A body starts from rest with a uniform acceleration of 4 m/s². The distance it travels during the 5th second is:",
+          "options": [
+            "50 m",
+            "20 m",
+            "16 m",
+            "18 m"
+          ],
+          "answer": "D",
+          "explanation": "Distance in the nth second = u + (a/2)(2n − 1) = 0 + 2 × 9 = 18 m."
+        },
+        {
+          "id": "K4",
+          "question": "A ball is thrown vertically upwards at 20 m/s. Taking g = 10 m/s², the maximum height it reaches is:",
+          "options": [
+            "10 m",
+            "20 m",
+            "40 m",
+            "2 m"
+          ],
+          "answer": "B",
+          "explanation": "h = u² / (2g) = 400 / 20 = 20 m."
+        },
+        {
+          "id": "K5",
+          "question": "A stone is dropped from the top of a tower 45 m high. Taking g = 10 m/s², the time it takes to reach the ground is:",
+          "options": [
+            "4.5 s",
+            "9 s",
+            "3 s",
+            "2.12 s"
+          ],
+          "answer": "C",
+          "explanation": "h = ½gt², so t = √(2 × 45 / 10) = √9 = 3 s."
+        },
+        {
+          "id": "K6",
+          "question": "A projectile is fired at 20 m/s at an angle of 30° to the horizontal. Taking g = 10 m/s², its horizontal range is approximately:",
+          "options": [
+            "34.64 m",
+            "20.00 m",
+            "40.00 m",
+            "17.32 m"
+          ],
+          "answer": "A",
+          "explanation": "R = u² sin 2θ / g = 400 × sin 60° / 10 = 34.64 m."
+        },
+        {
+          "id": "K7",
+          "question": "A projectile is fired at 40 m/s at an angle of 30° to the horizontal. Taking g = 10 m/s², the maximum height it reaches is:",
+          "options": [
+            "80 m",
+            "40 m",
+            "60 m",
+            "20 m"
+          ],
+          "answer": "D",
+          "explanation": "H = u² sin²θ / (2g) = (40 × 0.5)² / 20 = 400 / 20 = 20 m."
+        },
+        {
+          "id": "K8",
+          "question": "A projectile is fired at 30 m/s at an angle of 30° to the horizontal. Taking g = 10 m/s², its time of flight is:",
+          "options": [
+            "1.5 s",
+            "3 s",
+            "6 s",
+            "5.2 s"
+          ],
+          "answer": "B",
+          "explanation": "T = 2u sin θ / g = 2 × 30 × 0.5 / 10 = 3 s."
+        },
+        {
+          "id": "K9",
+          "question": "A wheel rotates at 600 rpm. Its angular velocity is approximately:",
+          "options": [
+            "10.00 rad/s",
+            "31.42 rad/s",
+            "62.83 rad/s",
+            "3770 rad/s"
+          ],
+          "answer": "C",
+          "explanation": "ω = 2πN / 60 = 2π × 600 / 60 = 20π ≈ 62.83 rad/s."
+        },
+        {
+          "id": "K10",
+          "question": "A flywheel starts from rest and reaches an angular velocity of 20 rad/s in 5 s with uniform angular acceleration. The angle it turns through in this time is:",
+          "options": [
+            "50 rad",
+            "100 rad",
+            "25 rad",
+            "4 rad"
+          ],
+          "answer": "A",
+          "explanation": "α = 20/5 = 4 rad/s². θ = ½αt² = ½ × 4 × 25 = 50 rad."
+        }
+      ]
+    },
+    {
+      "name": "Kinetics, Work, Energy & Momentum",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A man of mass 60 kg stands in a lift that accelerates upwards at 2 m/s². Taking g = 10 m/s², the force he exerts on the floor of the lift is:",
+          "options": [
+            "480 N",
+            "600 N",
+            "120 N",
+            "720 N"
+          ],
+          "answer": "D",
+          "explanation": "N = m(g + a) = 60 × (10 + 2) = 720 N."
+        },
+        {
+          "id": "D2",
+          "question": "Two masses of 3 kg and 2 kg are connected by a light string passing over a smooth, light pulley. Taking g = 10 m/s², the tension in the string is:",
+          "options": [
+            "20 N",
+            "24 N",
+            "30 N",
+            "25 N"
+          ],
+          "answer": "B",
+          "explanation": "T = 2m₁m₂g / (m₁ + m₂) = 2 × 3 × 2 × 10 / 5 = 24 N. (The acceleration is 2 m/s².)"
+        },
+        {
+          "id": "D3",
+          "question": "A car of mass 1000 kg moving at 20 m/s is brought to rest over 50 m by a constant braking force. The braking force is:",
+          "options": [
+            "4000 N",
+            "2000 N",
+            "8000 N",
+            "400 N"
+          ],
+          "answer": "A",
+          "explanation": "Work done by the brakes = loss of kinetic energy: F × 50 = ½ × 1000 × 20², so F = 4000 N."
+        },
+        {
+          "id": "D4",
+          "question": "A pump lifts 100 kg of water through a height of 12 m in 10 s. Taking g = 10 m/s², the power delivered to the water is:",
+          "options": [
+            "120 W",
+            "12000 W",
+            "1200 W",
+            "100 W"
+          ],
+          "answer": "C",
+          "explanation": "P = mgh / t = 100 × 10 × 12 / 10 = 1200 W (1.2 kW)."
+        },
+        {
+          "id": "D5",
+          "question": "A body of mass 2 kg moving at 6 m/s collides with a stationary body of mass 4 kg and they move together after the collision. Their common velocity is:",
+          "options": [
+            "3 m/s",
+            "4 m/s",
+            "1 m/s",
+            "2 m/s"
+          ],
+          "answer": "D",
+          "explanation": "Momentum is conserved: 2 × 6 = (2 + 4)v, so v = 2 m/s."
+        },
+        {
+          "id": "D6",
+          "question": "A ball of mass 0.15 kg moving at 20 m/s is hit straight back along its path at 20 m/s. The magnitude of the impulse on the ball is:",
+          "options": [
+            "3 N·s",
+            "6 N·s",
+            "0 N·s",
+            "60 N·s"
+          ],
+          "answer": "B",
+          "explanation": "Impulse = change in momentum = m(v − u) = 0.15 × (20 − (−20)) = 6 N·s."
+        },
+        {
+          "id": "D7",
+          "question": "A ball dropped from a height of 16 m onto a fixed floor rebounds to a height of 4 m. The coefficient of restitution is:",
+          "options": [
+            "0.5",
+            "0.25",
+            "0.75",
+            "2"
+          ],
+          "answer": "A",
+          "explanation": "e = √(h₂ / h₁) = √(4 / 16) = 0.5."
+        },
+        {
+          "id": "D8",
+          "question": "A car of mass 1000 kg travels round a level curve of radius 50 m at 10 m/s. The centripetal force needed is:",
+          "options": [
+            "200 N",
+            "5000 N",
+            "2000 N",
+            "20000 N"
+          ],
+          "answer": "C",
+          "explanation": "F = mv² / r = 1000 × 100 / 50 = 2000 N."
+        },
+        {
+          "id": "D9",
+          "question": "A flywheel has a mass moment of inertia of 5 kg·m². The torque needed to give it an angular acceleration of 4 rad/s² is:",
+          "options": [
+            "1.25 N·m",
+            "9 N·m",
+            "80 N·m",
+            "20 N·m"
+          ],
+          "answer": "D",
+          "explanation": "T = Iα = 5 × 4 = 20 N·m."
+        },
+        {
+          "id": "D10",
+          "question": "A gun of mass 5 kg fires a bullet of mass 0.05 kg at 400 m/s. The recoil velocity of the gun is:",
+          "options": [
+            "0.4 m/s",
+            "4 m/s",
+            "40 m/s",
+            "8 m/s"
+          ],
+          "answer": "B",
+          "explanation": "Momentum is conserved: 5 × V = 0.05 × 400, so V = 4 m/s (backwards)."
+        }
+      ]
+    }
+  ]
+}

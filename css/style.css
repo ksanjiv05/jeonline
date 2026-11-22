@@ -288,6 +288,34 @@ pre.code {
   background: var(--st-an) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 5.2l2 2 4-4.4' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 9px no-repeat;
 }
 
+/* ---------- Scientific calculator ---------- */
+.calc {
+  position: fixed; top: 112px; right: 326px; z-index: 55; width: 300px; max-width: calc(100vw - 16px);
+  background: #f4f6f9; border: 1px solid #9aa7b6; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .28); outline: none;
+}
+.calc-head {
+  display: flex; align-items: center; justify-content: space-between; padding: 6px 6px 6px 12px;
+  background: var(--brand-dark); color: #fff; font-size: 13px; font-weight: 700; cursor: move; touch-action: none;
+}
+.calc-close { width: 28px; height: 28px; border: 0; border-radius: 4px; background: transparent; color: #fff; font-size: 20px; line-height: 1; cursor: pointer; }
+.calc-close:hover { background: rgba(255, 255, 255, .2); }
+.calc-screen { margin: 8px; padding: 6px 10px; background: #fff; border: 1px solid var(--border); border-radius: 4px; text-align: right; }
+.calc-expr { min-height: 20px; font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.calc-res { font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.calc-keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; padding: 0 8px 8px; }
+.ck {
+  min-height: 36px; padding: 0; border: 1px solid #c3ccd6; border-radius: 4px; background: #fff;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.ck:hover { background: #eef3f9; }
+.ck:active { background: #dde6f1; }
+.ck.fn { background: #e6ecf3; font-size: 13px; }
+.ck.op { background: #dbe7f7; }
+.ck.eq { grid-column: span 2; background: var(--accent); border-color: var(--accent); color: #fff; }
+.ck.del { background: #fde3e0; }
+.ck.on { background: var(--brand); border-color: var(--brand); color: #fff; }
+
 /* Section tooltip */
 .sec-tip {
   position: fixed; z-index: 60; min-width: 240px; padding: 10px 12px; pointer-events: none;
@@ -402,6 +430,7 @@ pre.code {
   .palette.open { transform: none; }
   .palette-toggle { display: inline-block; }
   #ex-fullscreen { display: none; }
+  .calc { top: auto; right: 8px; bottom: 64px; }
   .sec-bar { flex-wrap: wrap; }
   .sec-label { display: none; }
   .sec-tabs { order: 2; flex-basis: 100%; }

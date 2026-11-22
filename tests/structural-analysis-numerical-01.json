@@ -1,0 +1,514 @@
+{
+  "title": "Structural Analysis: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Keep rough paper ready.",
+    "Use the values of EI, AE and M_p given in each question."
+  ],
+  "sections": [
+    {
+      "name": "Indeterminacy & Trusses",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "A pin-jointed plane truss has 17 members, 8 joints and 4 independent reaction components. Its total degree of static indeterminacy is:",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "answer": "C",
+          "explanation": "Ds = m + r − 2j = 17 + 4 − 16 = 5."
+        },
+        {
+          "id": "A2",
+          "question": "A rigid-jointed plane frame has two bays and one storey, with all three column bases fixed. Its degree of static indeterminacy is:",
+          "options": [
+            "6",
+            "3",
+            "9",
+            "4"
+          ],
+          "answer": "A",
+          "explanation": "Members m = 3 columns + 2 beams = 5, joints j = 6, reactions r = 3 × 3 = 9. Ds = 3m + r − 3j = 15 + 9 − 18 = 6."
+        },
+        {
+          "id": "A3",
+          "question": "A single-bay, single-storey rigid portal frame has both column bases fixed. If axial deformation of the members is neglected, its degree of kinematic indeterminacy is:",
+          "options": [
+            "6",
+            "3",
+            "2",
+            "4"
+          ],
+          "answer": "B",
+          "explanation": "Dk = 3j − r = 3 × 4 − 6 = 6 with axial deformation. Neglecting axial deformation of the 3 members removes 3 of these, leaving 3 (two joint rotations and one sway)."
+        },
+        {
+          "id": "A4",
+          "question": "A beam is fixed at both ends and has one internal hinge within its span. Under general (inclined) loading, its degree of static indeterminacy is:",
+          "options": [
+            "1",
+            "3",
+            "0",
+            "2"
+          ],
+          "answer": "D",
+          "explanation": "Reactions r = 6 and equilibrium equations = 3, so a fixed beam has Ds = 3. The internal hinge gives one extra condition (M = 0), so Ds = 3 − 1 = 2."
+        },
+        {
+          "id": "A5",
+          "question": "A triangular truss ABC has the shape of an equilateral triangle with a horizontal base AB of 4 m, on a hinge at A and a roller at B. A vertical load of 20 kN acts at the apex C. The force in the horizontal member AB is approximately:",
+          "options": [
+            "11.55 kN",
+            "5.77 kN",
+            "10.00 kN",
+            "8.66 kN"
+          ],
+          "answer": "B",
+          "explanation": "Each reaction is 10 kN. At joint A: the inclined member carries 10 / sin 60° = 11.55 kN (compression), and AB carries 11.55 × cos 60° ≈ 5.77 kN (tension)."
+        },
+        {
+          "id": "A6",
+          "question": "A Pratt truss of 12 m span has four panels of 3 m each and a height of 4 m, with diagonals sloping down towards the centre. Loads of 30 kN act at each of the three interior bottom-chord joints. The force in the top chord member of the second panel is:",
+          "options": [
+            "45 kN",
+            "33.75 kN",
+            "60 kN",
+            "22.5 kN"
+          ],
+          "answer": "A",
+          "explanation": "Each reaction is 45 kN. Cut the second panel and take moments about the centre bottom joint: M = 45 × 6 − 30 × 3 = 180 kN·m. Top chord force = 180 / 4 = 45 kN (compression)."
+        },
+        {
+          "id": "A7",
+          "question": "A Pratt truss of 12 m span has four panels of 3 m each and a height of 4 m, with diagonals sloping down towards the centre. Loads of 30 kN act at each of the three interior bottom-chord joints. The force in the diagonal member of the second panel is:",
+          "options": [
+            "15.00 kN",
+            "25.00 kN",
+            "18.75 kN",
+            "56.25 kN"
+          ],
+          "answer": "C",
+          "explanation": "Shear in the second panel = 45 − 30 = 15 kN. The diagonal is 5 m long (3-4-5 triangle), so sin θ = 4/5. Force = 15 / 0.8 = 18.75 kN."
+        },
+        {
+          "id": "A8",
+          "question": "Two identical bars AC and BC, each 2 m long with AE = 20000 kN, are pinned to supports at A and B and meet at joint C. Each bar is inclined at 45° to the vertical. A vertical load of 50 kN acts at C. The vertical deflection of C is:",
+          "options": [
+            "2.5 mm",
+            "10 mm",
+            "7.07 mm",
+            "5 mm"
+          ],
+          "answer": "D",
+          "explanation": "Bar force F = 50 / (2 cos 45°) = 35.36 kN; force due to a unit load at C is k = 0.7071. δ = Σ FkL / AE = 2 × 35.36 × 0.7071 × 2 / 20000 = 0.005 m = 5 mm."
+        },
+        {
+          "id": "A9",
+          "question": "A continuous beam of three spans is fixed at one end and rests on three roller supports. Under general loading, its degree of static indeterminacy is:",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "1"
+          ],
+          "answer": "B",
+          "explanation": "Reactions: 3 at the fixed end + 3 rollers = 6. Ds = 6 − 3 = 3."
+        },
+        {
+          "id": "A10",
+          "question": "A pin-jointed space truss has 15 members, 6 joints and 6 reaction components. Its degree of static indeterminacy is:",
+          "options": [
+            "3",
+            "9",
+            "0",
+            "6"
+          ],
+          "answer": "A",
+          "explanation": "For a space truss, Ds = m + r − 3j = 15 + 6 − 18 = 3."
+        }
+      ]
+    },
+    {
+      "name": "Fixed, Propped & Continuous Beams",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "A fixed beam of 6 m span carries a uniformly distributed load of 20 kN/m over the whole span. The fixed-end moment is:",
+          "options": [
+            "90 kN·m",
+            "30 kN·m",
+            "45 kN·m",
+            "60 kN·m"
+          ],
+          "answer": "D",
+          "explanation": "M = wL² / 12 = 20 × 36 / 12 = 60 kN·m."
+        },
+        {
+          "id": "B2",
+          "question": "A fixed beam AB of 6 m span carries a point load of 90 kN at 2 m from A. The fixed-end moment at A is:",
+          "options": [
+            "40 kN·m",
+            "120 kN·m",
+            "80 kN·m",
+            "60 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "M_A = Pab² / L² = 90 × 2 × 4² / 6² = 80 kN·m. (M_B = Pa²b / L² = 40 kN·m.)"
+        },
+        {
+          "id": "B3",
+          "question": "A propped cantilever of 4 m span carries a uniformly distributed load of 12 kN/m over the whole span. The reaction at the prop is:",
+          "options": [
+            "18 kN",
+            "30 kN",
+            "24 kN",
+            "12 kN"
+          ],
+          "answer": "A",
+          "explanation": "R = 3wL / 8 = 3 × 12 × 4 / 8 = 18 kN."
+        },
+        {
+          "id": "B4",
+          "question": "A propped cantilever of 4 m span carries a point load of 32 kN at mid-span. The bending moment at the fixed end is:",
+          "options": [
+            "32 kN·m",
+            "24 kN·m",
+            "20 kN·m",
+            "16 kN·m"
+          ],
+          "answer": "B",
+          "explanation": "M = 3PL / 16 = 3 × 32 × 4 / 16 = 24 kN·m. (The prop reaction is 5P/16 = 10 kN.)"
+        },
+        {
+          "id": "B5",
+          "question": "A fixed beam of 4 m span has EI = 8000 kN·m². One support settles by 10 mm relative to the other, with no rotation at either end. The moment induced at each end is:",
+          "options": [
+            "15 kN·m",
+            "60 kN·m",
+            "7.5 kN·m",
+            "30 kN·m"
+          ],
+          "answer": "D",
+          "explanation": "M = 6EIδ / L² = 6 × 8000 × 0.010 / 16 = 30 kN·m."
+        },
+        {
+          "id": "B6",
+          "question": "At a rigid joint B, member BA is 4 m long with its far end A fixed, and member BC is 6 m long with its far end C hinged. Both have the same EI. The distribution factor for member BA is approximately:",
+          "options": [
+            "0.333",
+            "0.5",
+            "0.667",
+            "0.6"
+          ],
+          "answer": "C",
+          "explanation": "k_BA = 4EI/4 = 1.0 EI, k_BC = 3EI/6 = 0.5 EI. DF_BA = 1.0 / 1.5 ≈ 0.667."
+        },
+        {
+          "id": "B7",
+          "question": "A continuous beam has two equal spans of 4 m, simply supported at the three supports, and carries a uniformly distributed load of 10 kN/m over both spans. The reaction at the middle support is:",
+          "options": [
+            "50 kN",
+            "40 kN",
+            "30 kN",
+            "60 kN"
+          ],
+          "answer": "A",
+          "explanation": "The support moment is wL²/8 = 20 kN·m. Each end reaction = wL/2 − M/L = 20 − 5 = 15 kN, so the middle reaction = 80 − 30 = 50 kN (= 1.25wL)."
+        },
+        {
+          "id": "B8",
+          "question": "A continuous beam has two equal spans of 4 m with simple end supports. Each span carries a point load of 40 kN at its mid-point. The bending moment at the middle support is:",
+          "options": [
+            "40 kN·m",
+            "30 kN·m",
+            "20 kN·m",
+            "15 kN·m"
+          ],
+          "answer": "B",
+          "explanation": "By the three-moment theorem with simple ends: 4L·M_B = 2 × (3PL²/8), so M_B = 3PL / 16 = 3 × 40 × 4 / 16 = 30 kN·m (hogging)."
+        },
+        {
+          "id": "B9",
+          "question": "A beam 5 m long has EI = 10000 kN·m² and its far end is fixed. A moment is applied at the near end to rotate it by 0.002 rad. The moment carried over to the far end is:",
+          "options": [
+            "16 kN·m",
+            "4 kN·m",
+            "12 kN·m",
+            "8 kN·m"
+          ],
+          "answer": "D",
+          "explanation": "Applied moment = 4EIθ / L = 4 × 10000 × 0.002 / 5 = 16 kN·m. Carry-over factor is ½, so the far-end moment = 8 kN·m."
+        },
+        {
+          "id": "B10",
+          "question": "A continuous beam ABC is fixed at A and C, with AB = BC = 4 m and constant EI. Span AB carries a uniformly distributed load of 12 kN/m; span BC is unloaded. The magnitude of the bending moment at A is:",
+          "options": [
+            "16 kN·m",
+            "24 kN·m",
+            "20 kN·m",
+            "12 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "Fixed-end moments on AB = wL²/12 = 16 kN·m. The unbalanced 16 kN·m at B is shared equally (DF = 0.5 each), so 8 kN·m goes to BA and half of that, 4 kN·m, carries over to A. M_A = 16 + 4 = 20 kN·m."
+        }
+      ]
+    },
+    {
+      "name": "Arches, Cables & Influence Lines",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "A three-hinged parabolic arch of 20 m span and 4 m rise carries a uniformly distributed load of 10 kN/m over the whole span. The horizontal thrust is:",
+          "options": [
+            "125 kN",
+            "100 kN",
+            "250 kN",
+            "62.5 kN"
+          ],
+          "answer": "A",
+          "explanation": "H = wL² / 8h = 10 × 400 / 32 = 125 kN."
+        },
+        {
+          "id": "C2",
+          "question": "A three-hinged arch of 20 m span and 5 m rise carries a point load of 100 kN at 5 m from the left support. The horizontal thrust is:",
+          "options": [
+            "100 kN",
+            "25 kN",
+            "75 kN",
+            "50 kN"
+          ],
+          "answer": "D",
+          "explanation": "V_B = 100 × 5 / 20 = 25 kN. Taking moments about the crown hinge for the right half: H × 5 = 25 × 10, so H = 50 kN."
+        },
+        {
+          "id": "C3",
+          "question": "A three-hinged parabolic arch of 20 m span and 5 m rise carries a point load of 100 kN at 5 m from the left support. The bending moment in the arch under the load is:",
+          "options": [
+            "375 kN·m",
+            "187.5 kN·m",
+            "125 kN·m",
+            "93.75 kN·m"
+          ],
+          "answer": "B",
+          "explanation": "V_A = 75 kN and H = 50 kN. Rise at the load: y = 4hx(L − x)/L² = 4 × 5 × 5 × 15 / 400 = 3.75 m. M = 75 × 5 − 50 × 3.75 = 187.5 kN·m."
+        },
+        {
+          "id": "C4",
+          "question": "A two-hinged semicircular arch of uniform section carries a point load of 100 kN at the crown. The horizontal thrust is approximately:",
+          "options": [
+            "50.00 kN",
+            "15.92 kN",
+            "31.83 kN",
+            "63.66 kN"
+          ],
+          "answer": "C",
+          "explanation": "For a two-hinged semicircular arch with a central point load, H = W / π = 100 / π ≈ 31.83 kN."
+        },
+        {
+          "id": "C5",
+          "question": "A three-hinged parabolic arch of 16 m span and 4 m rise carries a uniformly distributed load of 20 kN/m over the left half of the span only. The horizontal thrust is:",
+          "options": [
+            "80 kN",
+            "160 kN",
+            "40 kN",
+            "120 kN"
+          ],
+          "answer": "A",
+          "explanation": "V_B = 20 × 8 × 4 / 16 = 40 kN. Moments about the crown for the unloaded right half: H × 4 = 40 × 8, so H = 80 kN."
+        },
+        {
+          "id": "C6",
+          "question": "A cable of 100 m span and 10 m central sag, with supports at the same level, carries a uniformly distributed load of 20 kN/m of horizontal span. The maximum tension in the cable is approximately:",
+          "options": [
+            "2500.0 kN",
+            "3500.0 kN",
+            "1000.0 kN",
+            "2692.6 kN"
+          ],
+          "answer": "D",
+          "explanation": "H = wL²/8d = 20 × 100² / 80 = 2500 kN and V = wL/2 = 1000 kN. T_max = √(2500² + 1000²) ≈ 2692.6 kN."
+        },
+        {
+          "id": "C7",
+          "question": "A cable hangs in a parabola between two supports at the same level, 100 m apart, with a central sag of 10 m. The length of the cable exceeds the span by approximately:",
+          "options": [
+            "1.00 m",
+            "2.67 m",
+            "5.33 m",
+            "0.67 m"
+          ],
+          "answer": "B",
+          "explanation": "Cable length ≈ L + 8d²/3L, so the excess = 8 × 10² / (3 × 100) ≈ 2.67 m."
+        },
+        {
+          "id": "C8",
+          "question": "A single point load of 50 kN rolls across a simply supported beam of 10 m span. The maximum bending moment at a section 4 m from the left support is:",
+          "options": [
+            "125 kN·m",
+            "100 kN·m",
+            "120 kN·m",
+            "200 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "The influence line ordinate at the section is ab/L = 4 × 6 / 10 = 2.4 m. M_max = 50 × 2.4 = 120 kN·m."
+        },
+        {
+          "id": "C9",
+          "question": "A uniformly distributed load of 10 kN/m, 5 m long, crosses a simply supported girder of 20 m span. The maximum bending moment at mid-span is:",
+          "options": [
+            "218.75 kN·m",
+            "250 kN·m",
+            "187.5 kN·m",
+            "156.25 kN·m"
+          ],
+          "answer": "A",
+          "explanation": "Place the load centred on mid-span. The influence line ordinate is 5 m at the centre and 3.75 m at 2.5 m either side. Area covered = 2 × 2.5 × (5 + 3.75)/2 = 21.875 m². M = 10 × 21.875 = 218.75 kN·m."
+        },
+        {
+          "id": "C10",
+          "question": "Two wheel loads of 100 kN each, 4 m apart, roll across a simply supported girder of 20 m span. The absolute maximum bending moment in the girder is:",
+          "options": [
+            "720 kN·m",
+            "1000 kN·m",
+            "900 kN·m",
+            "810 kN·m"
+          ],
+          "answer": "D",
+          "explanation": "The resultant (200 kN) is 2 m from each load. Place the loads so mid-span bisects the distance between one load and the resultant: loads at 9 m and 13 m from A. R_A = (100 × 11 + 100 × 7)/20 = 90 kN. M under the first load = 90 × 9 = 810 kN·m."
+        }
+      ]
+    },
+    {
+      "name": "Deflection, Stiffness & Plastic Analysis",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A cantilever 3 m long carries a uniformly distributed load of 8 kN/m over its whole length. If EI = 18000 kN·m², the deflection at the free end is:",
+          "options": [
+            "1.5 mm",
+            "4.5 mm",
+            "12 mm",
+            "6 mm"
+          ],
+          "answer": "B",
+          "explanation": "δ = wL⁴ / 8EI = 8 × 81 / (8 × 18000) = 0.0045 m = 4.5 mm."
+        },
+        {
+          "id": "D2",
+          "question": "A simply supported beam of 6 m span carries a point load of 60 kN at 2 m from the left support. If EI = 16000 kN·m², the deflection under the load is approximately:",
+          "options": [
+            "6.67 mm",
+            "26.67 mm",
+            "13.33 mm",
+            "16.88 mm"
+          ],
+          "answer": "C",
+          "explanation": "δ = Pa²b² / 3EIL = 60 × 2² × 4² / (3 × 16000 × 6) = 0.01333 m ≈ 13.33 mm."
+        },
+        {
+          "id": "D3",
+          "question": "In a linearly elastic structure, a load of 20 kN at point A causes a deflection of 3 mm at point B. The deflection at A caused by a load of 50 kN at B is:",
+          "options": [
+            "7.5 mm",
+            "1.2 mm",
+            "3 mm",
+            "15 mm"
+          ],
+          "answer": "A",
+          "explanation": "By Maxwell's reciprocal theorem, a unit load at B deflects A by 3/20 mm. For 50 kN: 50 × 3 / 20 = 7.5 mm."
+        },
+        {
+          "id": "D4",
+          "question": "A cantilever 3 m long carries a point load of 10 kN at its free end. If EI = 15000 kN·m², the strain energy stored due to bending is:",
+          "options": [
+            "90 J",
+            "60 J",
+            "15 J",
+            "30 J"
+          ],
+          "answer": "D",
+          "explanation": "U = P²L³ / 6EI = 10² × 3³ / (6 × 15000) = 0.03 kN·m = 30 J."
+        },
+        {
+          "id": "D5",
+          "question": "A portal frame has two columns, each 3 m high with EI = 27000 kN·m² and fixed at the base, connected by a rigid beam. A horizontal load of 60 kN acts at beam level. The sway of the frame is:",
+          "options": [
+            "5.0 mm",
+            "2.5 mm",
+            "10.0 mm",
+            "1.25 mm"
+          ],
+          "answer": "B",
+          "explanation": "Each column has lateral stiffness 12EI/L³ = 12 × 27000 / 27 = 12000 kN/m. Total = 24000 kN/m. Sway = 60 / 24000 = 0.0025 m = 2.5 mm."
+        },
+        {
+          "id": "D6",
+          "question": "A cantilever 2 m long has EI = 8000 kN·m². The point load at the free end needed to produce a deflection of 5 mm there is:",
+          "options": [
+            "5 kN",
+            "30 kN",
+            "15 kN",
+            "60 kN"
+          ],
+          "answer": "C",
+          "explanation": "Stiffness = 3EI / L³ = 3 × 8000 / 8 = 3000 kN/m. P = 3000 × 0.005 = 15 kN."
+        },
+        {
+          "id": "D7",
+          "question": "A rectangular steel section is 100 mm wide and 200 mm deep. If the yield stress is 250 MPa, its plastic moment capacity is:",
+          "options": [
+            "250 kN·m",
+            "166.7 kN·m",
+            "375 kN·m",
+            "125 kN·m"
+          ],
+          "answer": "A",
+          "explanation": "Z_p = bd² / 4 = 100 × 200² / 4 = 10⁶ mm³. M_p = f_y Z_p = 250 × 10⁶ N·mm = 250 kN·m. (The yield moment is 166.7 kN·m.)"
+        },
+        {
+          "id": "D8",
+          "question": "A fixed beam of 6 m span has a plastic moment capacity of 90 kN·m. The collapse load for a point load at mid-span is:",
+          "options": [
+            "60 kN",
+            "90 kN",
+            "240 kN",
+            "120 kN"
+          ],
+          "answer": "D",
+          "explanation": "Hinges form at both ends and at the centre: W_u = 8M_p / L = 8 × 90 / 6 = 120 kN."
+        },
+        {
+          "id": "D9",
+          "question": "A propped cantilever of 5 m span has a plastic moment capacity of 100 kN·m. The collapse value of a uniformly distributed load over the whole span is approximately:",
+          "options": [
+            "32.00 kN/m",
+            "46.63 kN/m",
+            "64.00 kN/m",
+            "58.28 kN/m"
+          ],
+          "answer": "B",
+          "explanation": "For a propped cantilever with UDL, w_u = (6 + 4√2) M_p / L² = 11.657 × 100 / 25 ≈ 46.63 kN/m."
+        },
+        {
+          "id": "D10",
+          "question": "A fixed beam of 4 m span has a plastic moment capacity of 120 kN·m. The collapse value of a uniformly distributed load over the whole span is:",
+          "options": [
+            "60 kN/m",
+            "90 kN/m",
+            "120 kN/m",
+            "240 kN/m"
+          ],
+          "answer": "C",
+          "explanation": "w_u = 16M_p / L² = 16 × 120 / 16 = 120 kN/m."
+        }
+      ]
+    }
+  ]
+}

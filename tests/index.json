@@ -1,6 +1,46 @@
 {
   "tests": [
     {
+      "file": "tests/fluid-mechanics-numerical-01.json",
+      "title": "Fluid Mechanics: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Fluid properties, hydrostatics, buoyancy, Bernoulli, pipe flow, open channels, notches, pumps · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/soil-mechanics-numerical-01.json",
+      "title": "Soil Mechanics: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Index properties, permeability, seepage, effective stress, consolidation, shear strength, earth pressure, bearing capacity · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/surveying-numerical-01.json",
+      "title": "Surveying: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Chain and tape corrections, scales, compass and traversing, levelling, contouring, tacheometry, curves · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/steel-structures-numerical-01.json",
+      "title": "Steel Structures: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Bolted, riveted and welded connections, tension and compression members, column bases, beams, plate girders · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/concrete-structures-numerical-01.json",
+      "title": "Concrete Structures: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "IS 456 limit state flexure, shear, torsion, bond, slabs, columns, footings, working stress, prestressing · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/estimation-costing-valuation-numerical-01.json",
+      "title": "Estimation, Costing & Valuation: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Building quantities, earthwork, materials and rate analysis, valuation and depreciation · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/structural-analysis-numerical-01.json",
+      "title": "Structural Analysis: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Indeterminacy, trusses, fixed and continuous beams, arches, cables, influence lines, deflection, plastic analysis · 60 minutes · +1 / −0.25"
+    },
+    {
+      "file": "tests/solid-mechanics-numerical-01.json",
+      "title": "Solid Mechanics: Numerical Practice Set 1 (40 questions, moderate to hard)",
+      "description": "Stress and strain, beams, torsion, deflection, principal stresses, columns, pressure vessels · 60 minutes · +1 / −0.25"
+    },
+    {
       "file": "tests/engineering-mechanics-numerical-01.json",
       "title": "Engineering Mechanics: Numerical Practice Set 1 (40 questions)",
       "description": "Statics, friction, centroid and moment of inertia, kinematics, kinetics · 45 minutes · +1 / −0.25"

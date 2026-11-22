@@ -1,0 +1,514 @@
+{
+  "title": "Steel Structures: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Most follow IS 800:2007 (limit state); a few riveted-joint and plate-girder questions use the working stress values of IS 800:1984.",
+    "Use the formulas, partial safety factors and section properties given in each question."
+  ],
+  "sections": [
+    {
+      "name": "Bolted & Riveted Connections",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "An M20 bolt of grade 4.6 (f_ub = 400 MPa) is in single shear with the threads in the shear plane. The net tensile stress area is 245 mm² and γ_mb = 1.25. As per IS 800:2007, its design shear capacity is approximately:",
+          "options": [
+            "45.26 kN",
+            "58.04 kN",
+            "78.40 kN",
+            "90.52 kN"
+          ],
+          "answer": "A",
+          "explanation": "V_dsb = f_ub A_nb / (√3 γ_mb) = 400 × 245 / (1.732 × 1.25) ≈ 45.26 kN."
+        },
+        {
+          "id": "A2",
+          "question": "An M16 bolt of grade 4.6 (f_ub = 400 MPa) is in double shear, with one shear plane through the threads (A_nb = 157 mm²) and one through the shank (A_sb = 201 mm²). With γ_mb = 1.25, its design shear capacity is approximately:",
+          "options": [
+            "33.07 kN",
+            "74.27 kN",
+            "66.14 kN",
+            "58.01 kN"
+          ],
+          "answer": "C",
+          "explanation": "V_dsb = f_ub (A_nb + A_sb) / (√3 γ_mb) = 400 × (157 + 201) / (1.732 × 1.25) ≈ 66.14 kN."
+        },
+        {
+          "id": "A3",
+          "question": "An M20 bolt (f_ub = 400 MPa) in a 22 mm hole bears on a 10 mm plate of f_u = 410 MPa. The end distance is 40 mm and the pitch is 60 mm. With γ_mb = 1.25, its design bearing capacity (2.5 k_b d t f_u / γ_mb) is approximately:",
+          "options": [
+            "164.00 kN",
+            "99.39 kN",
+            "108.13 kN",
+            "124.24 kN"
+          ],
+          "answer": "B",
+          "explanation": "k_b is the least of e/3d₀ = 40/66 = 0.606, p/3d₀ − 0.25 = 0.659, f_ub/f_u = 0.976 and 1.0, so k_b = 0.606. V_dpb = 2.5 × 0.606 × 20 × 10 × 410 / 1.25 ≈ 99.39 kN."
+        },
+        {
+          "id": "A4",
+          "question": "A lap joint must transfer a factored load of 300 kN. Each bolt has a design strength of 45.26 kN. The minimum number of bolts required is:",
+          "options": [
+            "5",
+            "6",
+            "8",
+            "7"
+          ],
+          "answer": "D",
+          "explanation": "Number = 300 / 45.26 = 6.63, so 7 bolts are needed."
+        },
+        {
+          "id": "A5",
+          "question": "A power-driven shop rivet of 20 mm nominal diameter (gross diameter 21.5 mm) is in single shear. With a permissible shear stress of 100 MPa (IS 800:1984), its strength in shear is approximately:",
+          "options": [
+            "36.31 kN",
+            "31.42 kN",
+            "72.61 kN",
+            "64.50 kN"
+          ],
+          "answer": "A",
+          "explanation": "Strength = (π/4) × 21.5² × 100 = 36305 N ≈ 36.31 kN. The gross diameter, not the nominal diameter, is used."
+        },
+        {
+          "id": "A6",
+          "question": "A power-driven shop rivet of 21.5 mm gross diameter connects a 12 mm main plate between two cover plates (double shear). Permissible stresses are 100 MPa in shear and 300 MPa in bearing. The rivet value is approximately:",
+          "options": [
+            "36.31 kN",
+            "77.40 kN",
+            "72.61 kN",
+            "64.50 kN"
+          ],
+          "answer": "C",
+          "explanation": "Double shear = 2 × (π/4) × 21.5² × 100 = 72.61 kN. Bearing on the 12 mm plate = 21.5 × 12 × 300 = 77.40 kN. The rivet value is the lesser: 72.61 kN."
+        },
+        {
+          "id": "A7",
+          "question": "In a single-riveted lap joint, the pitch is 60 mm and the gross diameter of the rivet hole is 21.5 mm. Based on tearing of the plate, the efficiency of the joint is approximately:",
+          "options": [
+            "66.67%",
+            "64.17%",
+            "35.83%",
+            "73.12%"
+          ],
+          "answer": "B",
+          "explanation": "Efficiency = (p − d) / p = (60 − 21.5) / 60 = 0.6417, i.e. 64.17%."
+        },
+        {
+          "id": "A8",
+          "question": "A bracket is fixed by four bolts at the corners of a 100 mm × 100 mm square. A vertical load of 100 kN acts in the plane of the bolts at 200 mm from the centre of the group. The resultant force on the most heavily loaded bolt is approximately:",
+          "options": [
+            "70.71 kN",
+            "95.71 kN",
+            "75.00 kN",
+            "90.14 kN"
+          ],
+          "answer": "D",
+          "explanation": "Direct shear = 100/4 = 25 kN (vertical). Σr² = 4 × (50² + 50²) = 20000 mm². Torsional force components: Mx/Σr² = My/Σr² = 100 × 200 × 50 / 20000 = 50 kN each. Critical bolt: vertical 25 + 50 = 75 kN, horizontal 50 kN. Resultant = √(75² + 50²) ≈ 90.14 kN."
+        },
+        {
+          "id": "A9",
+          "question": "An M20 bolt of grade 8.8 (f_ub = 800 MPa) has a net tensile stress area of 245 mm². With γ_mb = 1.25, its design tension capacity based on rupture (0.9 f_ub A_n / γ_mb) is:",
+          "options": [
+            "141.12 kN",
+            "176.40 kN",
+            "70.56 kN",
+            "90.52 kN"
+          ],
+          "answer": "A",
+          "explanation": "T_db = 0.9 × 800 × 245 / 1.25 = 141120 N = 141.12 kN."
+        },
+        {
+          "id": "A10",
+          "question": "An M20 HSFG bolt of grade 8.8 (f_ub = 800 MPa, A_nb = 245 mm²) is in a slip-critical joint with one slip plane and standard holes. Take the proof load as 0.7 f_ub A_nb, μ_f = 0.5 and γ_mf = 1.25. Its design slip resistance is:",
+          "options": [
+            "68.60 kN",
+            "109.76 kN",
+            "54.88 kN",
+            "39.20 kN"
+          ],
+          "answer": "C",
+          "explanation": "Proof load F₀ = 0.7 × 800 × 245 = 137.2 kN. V_dsf = μ_f n_e K_h F₀ / γ_mf = 0.5 × 1 × 1 × 137.2 / 1.25 = 54.88 kN."
+        }
+      ]
+    },
+    {
+      "name": "Welded Connections & Tension Members",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "A 6 mm shop fillet weld joins plates of f_u = 410 MPa. With a throat thickness of 0.7 × size and γ_mw = 1.25, the design strength of the weld per mm length is approximately:",
+          "options": [
+            "1136.3 N/mm",
+            "795.4 N/mm",
+            "662.8 N/mm",
+            "994.2 N/mm"
+          ],
+          "answer": "B",
+          "explanation": "Strength = 0.7 s f_u / (√3 γ_mw) = 0.7 × 6 × 410 / (1.732 × 1.25) ≈ 795.4 N/mm."
+        },
+        {
+          "id": "B2",
+          "question": "A factored load of 200 kN is to be transferred by a 6 mm shop fillet weld (f_u = 410 MPa, γ_mw = 1.25, throat = 0.7 × size). The effective length of weld required is approximately:",
+          "options": [
+            "176.0 mm",
+            "301.7 mm",
+            "201.2 mm",
+            "251.5 mm"
+          ],
+          "answer": "D",
+          "explanation": "Weld strength = 0.7 × 6 × 410 / (√3 × 1.25) = 795.4 N/mm. Length = 200000 / 795.4 ≈ 251.5 mm."
+        },
+        {
+          "id": "B3",
+          "question": "An 8 mm site fillet weld has an effective length of 150 mm, on steel of f_u = 410 MPa. With γ_mw = 1.5 for site welds and throat = 0.7 × size, its design strength is approximately:",
+          "options": [
+            "132.56 kN",
+            "159.07 kN",
+            "189.37 kN",
+            "198.84 kN"
+          ],
+          "answer": "A",
+          "explanation": "Strength = 0.7 × 8 × 150 × 410 / (√3 × 1.5) = 132560 N ≈ 132.56 kN."
+        },
+        {
+          "id": "B4",
+          "question": "An angle with a 100 mm connected leg carries an axial load of 180 kN and is welded along its heel and toe only. The centroid is 28.4 mm from the heel. For no eccentricity, the force to be carried by the weld at the toe is:",
+          "options": [
+            "128.88 kN",
+            "90.00 kN",
+            "51.12 kN",
+            "71.60 kN"
+          ],
+          "answer": "C",
+          "explanation": "Taking moments about the heel: P_toe × 100 = 180 × 28.4, so P_toe = 51.12 kN (and the heel weld carries 128.88 kN)."
+        },
+        {
+          "id": "B5",
+          "question": "Two plates 150 mm wide and 12 mm thick are joined by a full-penetration shop butt weld. With f_y = 250 MPa and γ_m0 = 1.1, the design tensile strength of the joint is approximately:",
+          "options": [
+            "450.00 kN",
+            "409.09 kN",
+            "590.40 kN",
+            "360.00 kN"
+          ],
+          "answer": "B",
+          "explanation": "A full-penetration butt weld is as strong as the plate: T_d = f_y × l × t / γ_m0 = 250 × 150 × 12 / 1.1 ≈ 409.09 kN."
+        },
+        {
+          "id": "B6",
+          "question": "A tension member is a 200 mm × 10 mm plate of f_y = 250 MPa. With γ_m0 = 1.1, its design strength governed by yielding of the gross section is approximately:",
+          "options": [
+            "500.00 kN",
+            "656.00 kN",
+            "400.00 kN",
+            "454.55 kN"
+          ],
+          "answer": "D",
+          "explanation": "T_dg = A_g f_y / γ_m0 = 200 × 10 × 250 / 1.1 ≈ 454.55 kN."
+        },
+        {
+          "id": "B7",
+          "question": "A 200 mm × 10 mm plate has two 22 mm diameter holes in one cross-section. With f_u = 410 MPa and γ_m1 = 1.25, its design strength governed by rupture of the net section (0.9 A_n f_u / γ_m1) is approximately:",
+          "options": [
+            "460.51 kN",
+            "590.40 kN",
+            "511.68 kN",
+            "525.46 kN"
+          ],
+          "answer": "A",
+          "explanation": "A_n = (200 − 2 × 22) × 10 = 1560 mm². T_dn = 0.9 × 1560 × 410 / 1.25 ≈ 460.51 kN."
+        },
+        {
+          "id": "B8",
+          "question": "A plate 250 mm wide and 12 mm thick has 22 mm diameter holes in a staggered pattern. The critical zig-zag path passes through 3 holes, with two inclined portions each having a stagger (s) of 50 mm and a gauge (g) of 75 mm. The net area along this path is:",
+          "options": [
+            "2208 mm²",
+            "2308 mm²",
+            "2408 mm²",
+            "3000 mm²"
+          ],
+          "answer": "C",
+          "explanation": "A_n = (b − n d_h + Σ s²/4g) t = (250 − 3 × 22 + 2 × 50² / (4 × 75)) × 12 = (250 − 66 + 16.67) × 12 = 2408 mm²."
+        },
+        {
+          "id": "B9",
+          "question": "For a bolted connection, the gross area in shear is 1500 mm² and the net area in tension is 400 mm². With f_y = 250 MPa, f_u = 410 MPa, γ_m0 = 1.1 and γ_m1 = 1.25, the block shear strength from T_db = A_vg f_y / (√3 γ_m0) + 0.9 A_tn f_u / γ_m1 is approximately:",
+          "options": [
+            "196.82 kN",
+            "314.90 kN",
+            "328.02 kN",
+            "118.08 kN"
+          ],
+          "answer": "B",
+          "explanation": "Shear yielding = 1500 × 250 / (1.732 × 1.1) = 196.82 kN. Tension rupture = 0.9 × 400 × 410 / 1.25 = 118.08 kN. T_db = 196.82 + 118.08 = 314.90 kN."
+        },
+        {
+          "id": "B10",
+          "question": "A single-angle tension member is 3.9 m long and its minimum radius of gyration is 19.5 mm. Its slenderness ratio is:",
+          "options": [
+            "150",
+            "250",
+            "180",
+            "200"
+          ],
+          "answer": "D",
+          "explanation": "λ = L / r_min = 3900 / 19.5 = 200."
+        }
+      ]
+    },
+    {
+      "name": "Compression Members & Column Bases",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "A column 5 m long is fixed at one end and hinged at the other (effective length factor 0.8). Its minimum radius of gyration is 40 mm. Its slenderness ratio is:",
+          "options": [
+            "125",
+            "80",
+            "100",
+            "62.5"
+          ],
+          "answer": "C",
+          "explanation": "KL / r = 0.8 × 5000 / 40 = 100."
+        },
+        {
+          "id": "C2",
+          "question": "A steel column has a slenderness ratio KL/r of 100, with E = 2 × 10⁵ MPa and f_y = 250 MPa. Its non-dimensional slenderness ratio λ = √(f_y / f_cc) is approximately:",
+          "options": [
+            "1.125",
+            "0.888",
+            "1.266",
+            "0.790"
+          ],
+          "answer": "A",
+          "explanation": "Euler stress f_cc = π²E / (KL/r)² = π² × 2 × 10⁵ / 100² = 197.4 MPa. λ = √(250 / 197.4) ≈ 1.125."
+        },
+        {
+          "id": "C3",
+          "question": "A column has KL/r = 100, f_y = 250 MPa, E = 2 × 10⁵ MPa and belongs to buckling class b (α = 0.34). Using φ = 0.5[1 + α(λ − 0.2) + λ²] and f_cd = (f_y/γ_m0) / [φ + √(φ² − λ²)] with γ_m0 = 1.1, the design compressive stress is approximately:",
+          "options": [
+            "227.27 MPa",
+            "99.50 MPa",
+            "136.36 MPa",
+            "118.23 MPa"
+          ],
+          "answer": "D",
+          "explanation": "λ = 1.125. φ = 0.5[1 + 0.34 × (1.125 − 0.2) + 1.125²] = 1.291. f_cd = (250 / 1.1) / [1.291 + √(1.291² − 1.125²)] = 227.27 / 1.922 ≈ 118.23 MPa."
+        },
+        {
+          "id": "C4",
+          "question": "A built-up column has two channels placed back to back. For each channel: A = 45.64 cm², I_xx = 6362.6 cm⁴, I_yy = 310.8 cm⁴, and the centroid is 2.36 cm from the back of the web. The clear distance between the backs of the channels that makes the moments of inertia about both axes equal is approximately:",
+          "options": [
+            "230.3 mm",
+            "183.1 mm",
+            "91.6 mm",
+            "136.0 mm"
+          ],
+          "answer": "B",
+          "explanation": "2I_xx = 2[I_yy + A(S/2 + 2.36)²], so (S/2 + 2.36)² = (6362.6 − 310.8) / 45.64 = 132.6, giving S/2 + 2.36 = 11.515 cm. S = 2 × (11.515 − 2.36) = 18.31 cm ≈ 183.1 mm."
+        },
+        {
+          "id": "C5",
+          "question": "A laced column carries a factored axial load of 1000 kN. The transverse shear is taken as 2.5% of the axial load and is shared by single lacing on two parallel faces, inclined at 45° to the axis. The force in each lacing bar is approximately:",
+          "options": [
+            "25.00 kN",
+            "35.36 kN",
+            "17.68 kN",
+            "12.50 kN"
+          ],
+          "answer": "C",
+          "explanation": "V = 0.025 × 1000 = 25 kN. Force in each bar = V / (N sin θ) = 25 / (2 × sin 45°) ≈ 17.68 kN."
+        },
+        {
+          "id": "C6",
+          "question": "A flat lacing bar has an effective length of 400 mm. Its slenderness ratio must not exceed 145, and for a flat of thickness t the radius of gyration is t/√12. The minimum thickness needed to satisfy this limit is approximately:",
+          "options": [
+            "9.56 mm",
+            "4.78 mm",
+            "13.79 mm",
+            "2.76 mm"
+          ],
+          "answer": "A",
+          "explanation": "l / r = 400 √12 / t ≤ 145, so t ≥ 400 × 3.464 / 145 ≈ 9.56 mm."
+        },
+        {
+          "id": "C7",
+          "question": "A column carries a factored axial load of 1500 kN onto a square slab base resting on M20 concrete. Taking the bearing strength of concrete as 0.6 f_ck, the minimum side of the base plate is approximately:",
+          "options": [
+            "250.0 mm",
+            "500.0 mm",
+            "387.3 mm",
+            "353.6 mm"
+          ],
+          "answer": "D",
+          "explanation": "Bearing strength = 0.6 × 20 = 12 MPa. Area = 1500000 / 12 = 125000 mm². Side = √125000 ≈ 353.6 mm."
+        },
+        {
+          "id": "C8",
+          "question": "A slab base has projections of a = 100 mm and b = 80 mm beyond the column, and the upward pressure is w = 8 MPa. With f_y = 250 MPa and γ_m0 = 1.1, the thickness from t = √[2.5 w (a² − 0.3b²) γ_m0 / f_y] is approximately:",
+          "options": [
+            "17.98 mm",
+            "26.67 mm",
+            "28.28 mm",
+            "37.71 mm"
+          ],
+          "answer": "B",
+          "explanation": "t = √[2.5 × 8 × (100² − 0.3 × 80²) × 1.1 / 250] = √[20 × 8080 × 0.0044] = √711.04 ≈ 26.67 mm."
+        },
+        {
+          "id": "C9",
+          "question": "In a laced column, the slenderness ratio of each main component between lacing connections must not exceed 50 or 0.7 times the slenderness ratio of the whole column, whichever is less. The whole column has a slenderness ratio of 60 and each component has a minimum radius of gyration of 28 mm. The maximum spacing of lacing connections is:",
+          "options": [
+            "1400 mm",
+            "1680 mm",
+            "1176 mm",
+            "840 mm"
+          ],
+          "answer": "C",
+          "explanation": "Limit = lesser of 50 and 0.7 × 60 = 42. Maximum spacing = 42 × 28 = 1176 mm."
+        },
+        {
+          "id": "C10",
+          "question": "For a steel column with a slenderness ratio of 120 and E = 2 × 10⁵ MPa, the Euler buckling stress is approximately:",
+          "options": [
+            "137.08 MPa",
+            "164.49 MPa",
+            "97.92 MPa",
+            "250.00 MPa"
+          ],
+          "answer": "A",
+          "explanation": "f_cc = π²E / (KL/r)² = π² × 2 × 10⁵ / 120² ≈ 137.08 MPa."
+        }
+      ]
+    },
+    {
+      "name": "Beams, Plate Girders & Plastic Design",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A symmetric I-section has flanges of 200 mm × 20 mm and a web of 360 mm × 10 mm (overall depth 400 mm). Its plastic section modulus about the major axis is:",
+          "options": [
+            "1640 cm³",
+            "1520 cm³",
+            "2244 cm³",
+            "1844 cm³"
+          ],
+          "answer": "D",
+          "explanation": "Z_p = 2 × [flange area × lever arm + half-web area × lever arm] = 2 × [200 × 20 × 190 + 180 × 10 × 90] = 2 × 922000 mm³ = 1844 cm³."
+        },
+        {
+          "id": "D2",
+          "question": "A symmetric I-section has flanges of 200 mm × 20 mm and a web of 360 mm × 10 mm (overall depth 400 mm). Its shape factor about the major axis is approximately:",
+          "options": [
+            "1.500",
+            "1.125",
+            "1.060",
+            "1.250"
+          ],
+          "answer": "B",
+          "explanation": "I = 200 × 400³/12 − 190 × 360³/12 = 3.279 × 10⁸ mm⁴, so Z_e = I/200 = 1639.7 cm³. Z_p = 1844 cm³. Shape factor = 1844 / 1639.7 ≈ 1.125."
+        },
+        {
+          "id": "D3",
+          "question": "A laterally supported plastic section has a plastic section modulus of 1844 cm³ and f_y = 250 MPa. With β_b = 1 and γ_m0 = 1.1, its design bending strength is approximately:",
+          "options": [
+            "461.00 kN·m",
+            "372.67 kN·m",
+            "419.09 kN·m",
+            "507.10 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "M_d = β_b Z_p f_y / γ_m0 = 1 × 1844 × 10³ × 250 / 1.1 ≈ 419.09 kN·m."
+        },
+        {
+          "id": "D4",
+          "question": "A rolled I-beam is 400 mm deep with a web thickness of 8.9 mm and f_y = 250 MPa. With γ_m0 = 1.1, its design shear strength, V_d = f_y h t_w / (√3 γ_m0), is approximately:",
+          "options": [
+            "467.13 kN",
+            "513.84 kN",
+            "809.09 kN",
+            "269.70 kN"
+          ],
+          "answer": "A",
+          "explanation": "V_d = 250 × 400 × 8.9 / (1.732 × 1.1) = 467130 N ≈ 467.13 kN."
+        },
+        {
+          "id": "D5",
+          "question": "A simply supported steel beam of 6 m span carries a service load of 20 kN/m. The deflection is limited to span/300 and E = 2 × 10⁵ MPa. The minimum moment of inertia required is approximately:",
+          "options": [
+            "4218.8 cm⁴",
+            "16875.0 cm⁴",
+            "5625.0 cm⁴",
+            "8437.5 cm⁴"
+          ],
+          "answer": "D",
+          "explanation": "Allowable deflection = 6000 / 300 = 20 mm. I = 5wL⁴ / (384Eδ) = 5 × 20 × 6000⁴ / (384 × 2 × 10⁵ × 20) = 8.4375 × 10⁷ mm⁴ = 8437.5 cm⁴."
+        },
+        {
+          "id": "D6",
+          "question": "A laterally supported beam must resist a factored moment of 150 kN·m. With f_y = 250 MPa and γ_m0 = 1.1, the plastic section modulus required is:",
+          "options": [
+            "600 cm³",
+            "660 cm³",
+            "545 cm³",
+            "938 cm³"
+          ],
+          "answer": "B",
+          "explanation": "Z_p = M γ_m0 / f_y = 150 × 10⁶ × 1.1 / 250 = 660000 mm³ = 660 cm³."
+        },
+        {
+          "id": "D7",
+          "question": "In working stress design, the permissible bending stress is 0.66 f_y. For a section with a shape factor of 1.14, the load factor against plastic collapse of a simply supported beam is approximately:",
+          "options": [
+            "1.515",
+            "1.140",
+            "1.727",
+            "1.850"
+          ],
+          "answer": "C",
+          "explanation": "Factor of safety = f_y / 0.66 f_y = 1.515. Load factor = factor of safety × shape factor = 1.515 × 1.14 ≈ 1.727."
+        },
+        {
+          "id": "D8",
+          "question": "A plate girder must resist a bending moment of 2000 kN·m. The permissible bending stress is 165 MPa and the web is 10 mm thick. Using d = 1.1 √(M / (σ_b t_w)), the economical depth is approximately:",
+          "options": [
+            "1211.1 mm",
+            "1101.0 mm",
+            "1332.2 mm",
+            "856.0 mm"
+          ],
+          "answer": "A",
+          "explanation": "d = 1.1 × √(2000 × 10⁶ / (165 × 10)) = 1.1 × 1101.0 ≈ 1211.1 mm."
+        },
+        {
+          "id": "D9",
+          "question": "A beam with a 9 mm thick web (f_yw = 250 MPa) rests on a stiff bearing 100 mm long. The flange is 16 mm thick and the root radius is 14 mm. With load dispersion at 1:2.5 through the flange and root, and γ_m0 = 1.1, the web bearing strength F_w = (b₁ + n₂) t_w f_yw / γ_m0 is approximately:",
+          "options": [
+            "204.55 kN",
+            "393.75 kN",
+            "225.00 kN",
+            "357.95 kN"
+          ],
+          "answer": "D",
+          "explanation": "n₂ = 2.5 × (16 + 14) = 75 mm. F_w = (100 + 75) × 9 × 250 / 1.1 ≈ 357.95 kN."
+        },
+        {
+          "id": "D10",
+          "question": "Purlins span 4 m and are spaced 1.5 m apart on a roof carrying a load of 2 kN/m² normal to the slope. Treating the purlin as continuous with a maximum bending moment of wL²/10, the design moment is:",
+          "options": [
+            "6.0 kN·m",
+            "4.8 kN·m",
+            "3.2 kN·m",
+            "2.4 kN·m"
+          ],
+          "answer": "B",
+          "explanation": "Load on purlin w = 2 × 1.5 = 3 kN/m. M = wL² / 10 = 3 × 4² / 10 = 4.8 kN·m."
+        }
+      ]
+    }
+  ]
+}

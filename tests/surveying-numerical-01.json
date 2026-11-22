@@ -1,0 +1,514 @@
+{
+  "title": "Surveying: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Keep rough paper ready.",
+    "Bearings are whole circle bearings unless a quadrant is given. Use the formulas and constants stated in each question."
+  ],
+  "sections": [
+    {
+      "name": "Chain Surveying, Tape Corrections & Scales",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "A line was measured as 1500 m with a 20 m chain. The chain was later found to be 10 cm too long. The true length of the line is:",
+          "options": [
+            "1507.5 m",
+            "1492.5 m",
+            "1500.1 m",
+            "1515.0 m"
+          ],
+          "answer": "A",
+          "explanation": "True length = measured length × L′/L = 1500 × 20.10 / 20 = 1507.5 m."
+        },
+        {
+          "id": "A2",
+          "question": "An area was measured as 10 hectares with a 30 m chain that was 15 cm too short. The true area is approximately:",
+          "options": [
+            "10.10 ha",
+            "9.95 ha",
+            "9.90 ha",
+            "10.05 ha"
+          ],
+          "answer": "C",
+          "explanation": "True area = measured area × (L′/L)² = 10 × (29.85 / 30)² = 10 × 0.990025 ≈ 9.90 ha."
+        },
+        {
+          "id": "A3",
+          "question": "A distance of 100 m is measured along a slope between two points whose difference in level is 5 m. Using the approximate formula, the slope correction to be subtracted is:",
+          "options": [
+            "0.250 m",
+            "0.125 m",
+            "0.0125 m",
+            "1.25 m"
+          ],
+          "answer": "B",
+          "explanation": "Correction = h² / 2L = 5² / (2 × 100) = 0.125 m."
+        },
+        {
+          "id": "A4",
+          "question": "A steel tape standardised at 20 °C is used to measure a line of 300 m at 35 °C. If the coefficient of expansion is 12 × 10⁻⁶ per °C, the temperature correction is:",
+          "options": [
+            "0.108 m",
+            "0.018 m",
+            "0.0054 m",
+            "0.054 m"
+          ],
+          "answer": "D",
+          "explanation": "C_t = α (T − T₀) L = 12 × 10⁻⁶ × 15 × 300 = 0.054 m (additive)."
+        },
+        {
+          "id": "A5",
+          "question": "A 30 m steel tape, standardised under a pull of 100 N, is used under a pull of 150 N. Its cross-sectional area is 6 mm² and E = 2 × 10⁵ N/mm². The pull correction per tape length is:",
+          "options": [
+            "1.25 mm",
+            "3.75 mm",
+            "2.50 mm",
+            "0.125 mm"
+          ],
+          "answer": "A",
+          "explanation": "C_p = (P − P₀) L / AE = 50 × 30000 / (6 × 2 × 10⁵) = 1.25 mm (additive)."
+        },
+        {
+          "id": "A6",
+          "question": "A 30 m tape weighing 12 N in total is suspended between its ends under a pull of 100 N. The sag correction is:",
+          "options": [
+            "36 mm",
+            "9 mm",
+            "18 mm",
+            "1.8 mm"
+          ],
+          "answer": "C",
+          "explanation": "C_s = W² L / 24P² = 12² × 30 / (24 × 100²) = 0.018 m = 18 mm (subtractive)."
+        },
+        {
+          "id": "A7",
+          "question": "A map is drawn to a scale of 1 cm = 50 m. A plot measures 20 cm² on the map. Its area on the ground is:",
+          "options": [
+            "0.5 ha",
+            "5 ha",
+            "10 ha",
+            "50 ha"
+          ],
+          "answer": "B",
+          "explanation": "1 cm² on the map = 50 × 50 = 2500 m². Ground area = 20 × 2500 = 50000 m² = 5 ha."
+        },
+        {
+          "id": "A8",
+          "question": "A plan drawn to a scale of 1 cm = 10 m has shrunk so that a line originally 10 cm long now measures 9.8 cm. An area measured on the shrunk plan is 96.04 cm². The true area on the ground is:",
+          "options": [
+            "9604 m²",
+            "9800 m²",
+            "10404 m²",
+            "10000 m²"
+          ],
+          "answer": "D",
+          "explanation": "Shrinkage factor = 9.8 / 10 = 0.98. Original plan area = 96.04 / 0.98² = 100 cm². Ground area = 100 × 10² = 10000 m²."
+        },
+        {
+          "id": "A9",
+          "question": "Offsets are laid out with an angular error of 3°. On a plan to a scale of 1 cm = 20 m, the displacement of a plotted point must not exceed 0.25 mm. The maximum permissible length of offset is approximately:",
+          "options": [
+            "9.55 m",
+            "4.78 m",
+            "19.11 m",
+            "0.48 m"
+          ],
+          "answer": "A",
+          "explanation": "Scale is 1:2000, so 0.25 mm on paper = 0.5 m on the ground. l sin 3° = 0.5, so l = 0.5 / 0.05234 ≈ 9.55 m."
+        },
+        {
+          "id": "A10",
+          "question": "A base line measures 1000 m at a mean elevation of 640 m above mean sea level. Taking the radius of the earth as 6400 km, the correction to reduce the length to mean sea level is:",
+          "options": [
+            "0.064 m",
+            "0.200 m",
+            "0.100 m",
+            "1.000 m"
+          ],
+          "answer": "C",
+          "explanation": "Correction = L h / R = 1000 × 640 / 6400000 = 0.100 m (subtractive)."
+        }
+      ]
+    },
+    {
+      "name": "Compass Surveying & Traversing",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "The fore bearing of line AB is 60° and the fore bearing of line BC is 130°. The included angle ABC is:",
+          "options": [
+            "70°",
+            "110°",
+            "190°",
+            "250°"
+          ],
+          "answer": "B",
+          "explanation": "Back bearing of AB = 60° + 180° = 240°. Angle ABC = 240° − 130° = 110°."
+        },
+        {
+          "id": "B2",
+          "question": "A line had a magnetic bearing of S 40° E when the declination was 2° E. The declination is now 3° W. The present magnetic whole circle bearing of the line is:",
+          "options": [
+            "135°",
+            "139°",
+            "141°",
+            "145°"
+          ],
+          "answer": "D",
+          "explanation": "Old magnetic WCB = 180° − 40° = 140°. True bearing = 140° + 2° = 142°. Present magnetic bearing = 142° + 3° = 145° (S 35° E)."
+        },
+        {
+          "id": "B3",
+          "question": "The interior angles of a closed traverse of 6 sides add up to 719° 24′. If the error is distributed equally, the correction to be added to each angle is:",
+          "options": [
+            "6′",
+            "36′",
+            "3′",
+            "10′"
+          ],
+          "answer": "A",
+          "explanation": "Theoretical sum = (2n − 4) × 90° = 720°. Error = −36′. Correction per angle = 36′ / 6 = 6′."
+        },
+        {
+          "id": "B4",
+          "question": "A traverse line is 200 m long with a bearing of N 30° E. Its latitude is approximately:",
+          "options": [
+            "100.00 m",
+            "115.47 m",
+            "173.21 m",
+            "200.00 m"
+          ],
+          "answer": "C",
+          "explanation": "Latitude = L cos θ = 200 × cos 30° ≈ 173.21 m (northing). The departure is 200 sin 30° = 100 m."
+        },
+        {
+          "id": "B5",
+          "question": "A traverse line is 150 m long with a whole circle bearing of 240°. Its departure is approximately:",
+          "options": [
+            "−75.00 m",
+            "−129.90 m",
+            "+129.90 m",
+            "+75.00 m"
+          ],
+          "answer": "B",
+          "explanation": "Departure = L sin θ = 150 × sin 240° ≈ −129.90 m (a westing). The latitude is 150 cos 240° = −75 m."
+        },
+        {
+          "id": "B6",
+          "question": "In a closed traverse with a perimeter of 2000 m, the sum of latitudes is +0.6 m and the sum of departures is −0.8 m. The relative precision of the traverse is 1 in:",
+          "options": [
+            "1000",
+            "1400",
+            "2500",
+            "2000"
+          ],
+          "answer": "D",
+          "explanation": "Closing error = √(0.6² + 0.8²) = 1.0 m. Relative precision = 1.0 / 2000, i.e. 1 in 2000."
+        },
+        {
+          "id": "B7",
+          "question": "In a closed traverse ABC, AB is 120 m long with a whole circle bearing of 45°, and BC is 80 m long with a whole circle bearing of 135°. The length of the closing line CA is approximately:",
+          "options": [
+            "144.22 m",
+            "200.00 m",
+            "113.14 m",
+            "169.71 m"
+          ],
+          "answer": "A",
+          "explanation": "ΣL = 120 cos 45° + 80 cos 135° = 84.85 − 56.57 = 28.28 m. ΣD = 84.85 + 56.57 = 141.42 m. CA = √(28.28² + 141.42²) ≈ 144.22 m."
+        },
+        {
+          "id": "B8",
+          "question": "In a closed traverse ABC, AB is 120 m long with a whole circle bearing of 45°, and BC is 80 m long with a whole circle bearing of 135°. The whole circle bearing of the closing line CA is approximately:",
+          "options": [
+            "78.69°",
+            "101.31°",
+            "258.69°",
+            "281.31°"
+          ],
+          "answer": "C",
+          "explanation": "For CA, latitude = −28.28 m and departure = −141.42 m (south-west quadrant). tan θ = 141.42 / 28.28 = 5, so θ = 78.69°: the bearing is S 78.69° W, or 180° + 78.69° = 258.69°."
+        },
+        {
+          "id": "B9",
+          "question": "In a closed traverse with a perimeter of 1000 m, the error in latitude is +0.50 m. By Bowditch's rule, the magnitude of the correction to the latitude of a line 200 m long is:",
+          "options": [
+            "0.05 m",
+            "0.10 m",
+            "0.50 m",
+            "0.25 m"
+          ],
+          "answer": "B",
+          "explanation": "Correction = total error × (length of line / perimeter) = 0.50 × 200 / 1000 = 0.10 m (applied with the opposite sign)."
+        },
+        {
+          "id": "B10",
+          "question": "The corners of a plot, taken in order, have coordinates (in metres) A (0, 0), B (100, 0), C (120, 80) and D (20, 100). The area of the plot is:",
+          "options": [
+            "18400 m²",
+            "8000 m²",
+            "10000 m²",
+            "9200 m²"
+          ],
+          "answer": "D",
+          "explanation": "Area = ½ |Σ(xᵢyᵢ₊₁ − xᵢ₊₁yᵢ)| = ½ |0 + 8000 + (12000 − 1600) + 0| = ½ × 18400 = 9200 m²."
+        }
+      ]
+    },
+    {
+      "name": "Levelling & Contouring",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "The reduced level of a benchmark is 100.000 m. The back sight on it is 1.500 m and the fore sight on a point P is 2.250 m. The reduced level of P is:",
+          "options": [
+            "100.750 m",
+            "103.750 m",
+            "99.250 m",
+            "98.500 m"
+          ],
+          "answer": "C",
+          "explanation": "Height of instrument = 100.000 + 1.500 = 101.500 m. RL of P = 101.500 − 2.250 = 99.250 m."
+        },
+        {
+          "id": "C2",
+          "question": "The back sight on a benchmark of RL 100.000 m is 1.200 m. The staff is then held inverted against the underside of a ceiling and reads 2.300 m. The reduced level of the ceiling is:",
+          "options": [
+            "103.5 m",
+            "98.9 m",
+            "101.1 m",
+            "96.5 m"
+          ],
+          "answer": "A",
+          "explanation": "Height of instrument = 101.200 m. An inverted staff reading is added: RL = 101.200 + 2.300 = 103.5 m."
+        },
+        {
+          "id": "C3",
+          "question": "Using a combined correction of 0.0673 d² metres (d in km), the correction for curvature and refraction for a sight distance of 2 km is approximately:",
+          "options": [
+            "0.314 m",
+            "0.135 m",
+            "0.045 m",
+            "0.269 m"
+          ],
+          "answer": "D",
+          "explanation": "Combined correction = 0.0673 × 2² ≈ 0.269 m (subtracted from the staff reading)."
+        },
+        {
+          "id": "C4",
+          "question": "An observer's eye is 5 m above sea level. Using h = 0.0673 d² (h in m, d in km), the greatest distance at which the top of a lighthouse 50 m above sea level is just visible is approximately:",
+          "options": [
+            "27.26 km",
+            "35.88 km",
+            "28.59 km",
+            "8.62 km"
+          ],
+          "answer": "B",
+          "explanation": "Distance to the horizon from the eye = √(5 / 0.0673) = 8.62 km; from the lighthouse top = √(50 / 0.0673) = 27.26 km. Total = 35.88 km."
+        },
+        {
+          "id": "C5",
+          "question": "In reciprocal levelling, with the level near A the staff readings are 1.500 m on A and 2.200 m on B. With the level near B the readings are 1.000 m on A and 1.500 m on B. If the RL of A is 100.000 m, the RL of B is:",
+          "options": [
+            "100.600 m",
+            "99.300 m",
+            "99.400 m",
+            "99.500 m"
+          ],
+          "answer": "C",
+          "explanation": "True difference = [(2.200 − 1.500) + (1.500 − 1.000)] / 2 = 0.600 m, with B lower (larger readings on B). RL of B = 100.000 − 0.600 = 99.400 m."
+        },
+        {
+          "id": "C6",
+          "question": "A staff is held 100 m from a level. When the bubble is moved through 5 divisions, the staff reading changes by 0.05 m. The sensitivity of the bubble tube per division is approximately:",
+          "options": [
+            "20.63″",
+            "103.13″",
+            "41.25″",
+            "4.13″"
+          ],
+          "answer": "A",
+          "explanation": "α = s / (nD) × 206265 = 0.05 / (5 × 100) × 206265 ≈ 20.63″ per division."
+        },
+        {
+          "id": "C7",
+          "question": "A road is to be set out at a ruling gradient of 1 in 25 on a map of scale 1:5000 with a contour interval of 2 m. The distance between successive contours along the route, measured on the map, is:",
+          "options": [
+            "2.5 mm",
+            "25 mm",
+            "5 mm",
+            "10 mm"
+          ],
+          "answer": "D",
+          "explanation": "Horizontal distance for a 2 m rise = 2 × 25 = 50 m. On the map: 50 m / 5000 = 0.01 m = 10 mm."
+        },
+        {
+          "id": "C8",
+          "question": "In a two-peg test with the level midway between A and B, the staff readings are 1.500 m on A and 1.200 m on B. With the level set up very close to A, the readings are 1.400 m on A and 1.150 m on B. For a horizontal line of sight from this second position, the staff reading on B should be:",
+          "options": [
+            "1.150 m",
+            "1.100 m",
+            "1.200 m",
+            "1.050 m"
+          ],
+          "answer": "B",
+          "explanation": "True difference in level = 1.500 − 1.200 = 0.300 m (B higher). Correct reading on B = 1.400 − 0.300 = 1.100 m. The actual reading of 1.150 m shows a collimation error of 0.050 m."
+        },
+        {
+          "id": "C9",
+          "question": "On a page of a level book, the sum of back sights is 8.450 m and the sum of fore sights is 6.250 m. If the RL of the first point is 50.000 m, the RL of the last point is:",
+          "options": [
+            "47.800 m",
+            "58.450 m",
+            "52.200 m",
+            "56.250 m"
+          ],
+          "answer": "C",
+          "explanation": "ΣBS − ΣFS = 8.450 − 6.250 = +2.200 m. Last RL = 50.000 + 2.200 = 52.200 m."
+        },
+        {
+          "id": "C10",
+          "question": "Two points A and B, 80 m apart on a uniform slope, have reduced levels of 98.2 m and 101.4 m. The distance from A of the 100 m contour is:",
+          "options": [
+            "45 m",
+            "35 m",
+            "40 m",
+            "50 m"
+          ],
+          "answer": "A",
+          "explanation": "By interpolation: distance = 80 × (100 − 98.2) / (101.4 − 98.2) = 80 × 1.8 / 3.2 = 45 m."
+        }
+      ]
+    },
+    {
+      "name": "Tacheometry, Trigonometric Levelling & Curves",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A tacheometer has a multiplying constant of 100 and an additive constant of 0.3 m. With a horizontal line of sight, the staff intercept is 1.250 m. The horizontal distance to the staff is:",
+          "options": [
+            "125.0 m",
+            "124.7 m",
+            "155.0 m",
+            "125.3 m"
+          ],
+          "answer": "D",
+          "explanation": "D = Ks + C = 100 × 1.250 + 0.3 = 125.3 m."
+        },
+        {
+          "id": "D2",
+          "question": "A tacheometer with K = 100 and C = 0 is sighted on a vertical staff at an angle of elevation of 10°. The staff intercept is 1.500 m. The horizontal distance is approximately:",
+          "options": [
+            "150.00 m",
+            "145.48 m",
+            "147.72 m",
+            "25.65 m"
+          ],
+          "answer": "B",
+          "explanation": "D = Ks cos²θ = 100 × 1.5 × cos² 10° = 150 × 0.9698 ≈ 145.48 m."
+        },
+        {
+          "id": "D3",
+          "question": "A tacheometer with K = 100 and C = 0 is sighted on a vertical staff at an angle of elevation of 10°. The staff intercept is 1.500 m. The vertical distance between the instrument axis and the central hair reading is approximately:",
+          "options": [
+            "26.05 m",
+            "51.30 m",
+            "25.65 m",
+            "145.48 m"
+          ],
+          "answer": "C",
+          "explanation": "V = Ks (sin 2θ) / 2 = 100 × 1.5 × sin 20° / 2 ≈ 25.65 m."
+        },
+        {
+          "id": "D4",
+          "question": "A theodolite is set up 100 m horizontally from the foot of a tower. The RL of the instrument axis is 50.00 m and the angle of elevation to the top of the tower is 30°. The RL of the top of the tower is approximately:",
+          "options": [
+            "107.74 m",
+            "100.00 m",
+            "136.60 m",
+            "223.21 m"
+          ],
+          "answer": "A",
+          "explanation": "Height above the instrument axis = 100 tan 30° = 57.74 m. RL of top = 50.00 + 57.74 = 107.74 m."
+        },
+        {
+          "id": "D5",
+          "question": "A simple circular curve has a radius of 300 m and a deflection angle of 60°. The tangent length is approximately:",
+          "options": [
+            "519.62 m",
+            "150.00 m",
+            "314.16 m",
+            "173.21 m"
+          ],
+          "answer": "D",
+          "explanation": "T = R tan(Δ/2) = 300 × tan 30° ≈ 173.21 m."
+        },
+        {
+          "id": "D6",
+          "question": "A simple circular curve has a radius of 300 m and a deflection angle of 60°. The length of the curve is approximately:",
+          "options": [
+            "300.00 m",
+            "314.16 m",
+            "628.32 m",
+            "157.08 m"
+          ],
+          "answer": "B",
+          "explanation": "L = πRΔ / 180 = π × 300 × 60 / 180 ≈ 314.16 m. (The long chord is 2R sin 30° = 300 m.)"
+        },
+        {
+          "id": "D7",
+          "question": "Using the 30 m arc definition, R = 1719 / D. The radius of a 3° curve is:",
+          "options": [
+            "1719 m",
+            "382 m",
+            "573 m",
+            "860 m"
+          ],
+          "answer": "C",
+          "explanation": "R = 1719 / D = 1719 / 3 = 573 m."
+        },
+        {
+          "id": "D8",
+          "question": "A simple circular curve has a radius of 300 m and a deflection angle of 60°. The mid-ordinate (versed sine) of the curve is approximately:",
+          "options": [
+            "40.19 m",
+            "46.41 m",
+            "150.00 m",
+            "80.38 m"
+          ],
+          "answer": "A",
+          "explanation": "M = R (1 − cos(Δ/2)) = 300 × (1 − cos 30°) ≈ 40.19 m. (The apex distance is R(sec 30° − 1) = 46.41 m.)"
+        },
+        {
+          "id": "D9",
+          "question": "A circular curve of 300 m radius is set out by Rankine's method with 30 m chords. Using δ = 1718.9 C / R minutes, the tangential (deflection) angle for one full chord is approximately:",
+          "options": [
+            "85.94′",
+            "343.77′",
+            "5.73′",
+            "171.89′"
+          ],
+          "answer": "D",
+          "explanation": "δ = 1718.9 × 30 / 300 ≈ 171.89′ (about 2° 52′)."
+        },
+        {
+          "id": "D10",
+          "question": "A planimeter with the anchor point outside the figure has a multiplying constant of 100 cm². The initial reading is 8.500 and the final reading is 2.250, and the zero of the dial passed the index once in the clockwise direction. The area of the figure is:",
+          "options": [
+            "625 cm²",
+            "375 cm²",
+            "1375 cm²",
+            "275 cm²"
+          ],
+          "answer": "B",
+          "explanation": "A = M (FR − IR + 10N) = 100 × (2.250 − 8.500 + 10 × 1) = 100 × 3.75 = 375 cm²."
+        }
+      ]
+    }
+  ]
+}

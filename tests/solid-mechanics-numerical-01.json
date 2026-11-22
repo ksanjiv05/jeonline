@@ -1,0 +1,514 @@
+{
+  "title": "Solid Mechanics: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Keep rough paper ready.",
+    "Use the material constants given in each question."
+  ],
+  "sections": [
+    {
+      "name": "Stress, Strain & Elastic Constants",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "A steel bar of 20 mm diameter and 2 m length carries an axial pull of 60 kN. If E = 200 GPa, the elongation of the bar is approximately:",
+          "options": [
+            "0.955 mm",
+            "1.91 mm",
+            "3.82 mm",
+            "0.477 mm"
+          ],
+          "answer": "B",
+          "explanation": "A = π × 20² / 4 = 314.16 mm². δ = PL / AE = 60000 × 2000 / (314.16 × 200000) ≈ 1.91 mm."
+        },
+        {
+          "id": "A2",
+          "question": "A stepped bar has two parts in series: 20 mm diameter × 300 mm long and 30 mm diameter × 400 mm long. It carries an axial load of 50 kN. If E = 200 GPa, the total elongation is approximately:",
+          "options": [
+            "0.239 mm",
+            "0.141 mm",
+            "0.760 mm",
+            "0.380 mm"
+          ],
+          "answer": "D",
+          "explanation": "δ = (P/E)(L₁/A₁ + L₂/A₂) = (50000/200000)(300/314.16 + 400/706.86) = 0.25 × (0.9549 + 0.5659) ≈ 0.380 mm."
+        },
+        {
+          "id": "A3",
+          "question": "A circular bar tapers uniformly from 20 mm diameter to 40 mm diameter over a length of 1 m. It carries an axial pull of 40 kN. If E = 200 GPa, its elongation is approximately:",
+          "options": [
+            "0.318 mm",
+            "0.637 mm",
+            "0.159 mm",
+            "0.283 mm"
+          ],
+          "answer": "A",
+          "explanation": "δ = 4PL / (πE d₁d₂) = 4 × 40000 × 1000 / (π × 200000 × 20 × 40) ≈ 0.318 mm."
+        },
+        {
+          "id": "A4",
+          "question": "A uniform steel bar 10 m long hangs vertically from its top end. The unit weight of steel is 78.5 kN/m³ and E = 200 GPa. The elongation of the bar due to its own weight is approximately:",
+          "options": [
+            "0.0393 mm",
+            "0.0098 mm",
+            "0.0196 mm",
+            "0.196 mm"
+          ],
+          "answer": "C",
+          "explanation": "δ = γL² / 2E = 78.5 × 10³ × 10² / (2 × 200 × 10⁹) = 1.96 × 10⁻⁵ m ≈ 0.0196 mm."
+        },
+        {
+          "id": "A5",
+          "question": "A steel rod is held between two rigid supports and its temperature is raised by 50 °C. If α = 12 × 10⁻⁶ /°C and E = 200 GPa, the compressive stress induced in the rod is:",
+          "options": [
+            "60 MPa",
+            "120 MPa",
+            "240 MPa",
+            "100 MPa"
+          ],
+          "answer": "B",
+          "explanation": "σ = EαΔT = 200000 × 12 × 10⁻⁶ × 50 = 120 MPa."
+        },
+        {
+          "id": "A6",
+          "question": "A steel rod 2 m long is fixed between two supports and heated through 60 °C. The supports yield by a total of 0.5 mm. If α = 12 × 10⁻⁶ /°C and E = 200 GPa, the stress induced in the rod is:",
+          "options": [
+            "144 MPa",
+            "50 MPa",
+            "44 MPa",
+            "94 MPa"
+          ],
+          "answer": "D",
+          "explanation": "Free expansion = αΔT L = 12 × 10⁻⁶ × 60 × 2000 = 1.44 mm. Expansion prevented = 1.44 − 0.5 = 0.94 mm. σ = E × 0.94 / 2000 = 94 MPa."
+        },
+        {
+          "id": "A7",
+          "question": "For a material, E = 200 GPa and Poisson's ratio is 0.25. Its bulk modulus K is approximately:",
+          "options": [
+            "133.33 GPa",
+            "80 GPa",
+            "100 GPa",
+            "266.67 GPa"
+          ],
+          "answer": "A",
+          "explanation": "K = E / [3(1 − 2ν)] = 200 / (3 × 0.5) = 133.33 GPa."
+        },
+        {
+          "id": "A8",
+          "question": "For a material, the modulus of elasticity is 210 GPa and the modulus of rigidity is 84 GPa. Its Poisson's ratio is:",
+          "options": [
+            "0.30",
+            "0.20",
+            "0.25",
+            "0.33"
+          ],
+          "answer": "C",
+          "explanation": "E = 2G(1 + ν), so ν = E / 2G − 1 = 210 / 168 − 1 = 0.25."
+        },
+        {
+          "id": "A9",
+          "question": "A steel rod of area 500 mm² is enclosed in a copper tube of area 1000 mm², and the two are rigidly joined at the ends. The assembly carries an axial load of 100 kN. If E for steel is 200 GPa and E for copper is 100 GPa, the stress in the steel rod is:",
+          "options": [
+            "66.67 MPa",
+            "100 MPa",
+            "50 MPa",
+            "200 MPa"
+          ],
+          "answer": "B",
+          "explanation": "Load shared in proportion to AE: steel 200 × 500 = 100000, copper 100 × 1000 = 100000, so steel takes 50 kN. Stress = 50000 / 500 = 100 MPa."
+        },
+        {
+          "id": "A10",
+          "question": "A bar 1 m long with a 50 mm × 50 mm cross-section is subjected to an axial tensile stress of 100 MPa. If E = 200 GPa and Poisson's ratio is 0.3, the increase in its volume is:",
+          "options": [
+            "1250 mm³",
+            "250 mm³",
+            "125 mm³",
+            "500 mm³"
+          ],
+          "answer": "D",
+          "explanation": "Volumetric strain = (σ/E)(1 − 2ν) = 0.0005 × 0.4 = 0.0002. V = 1000 × 50 × 50 = 2.5 × 10⁶ mm³, so ΔV = 500 mm³."
+        }
+      ]
+    },
+    {
+      "name": "Shear Force, Bending Moment & Beam Stresses",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "A cantilever 3 m long carries a uniformly distributed load of 4 kN/m over its whole length and a point load of 5 kN at the free end. The maximum bending moment is:",
+          "options": [
+            "33 kN·m",
+            "27 kN·m",
+            "51 kN·m",
+            "18 kN·m"
+          ],
+          "answer": "A",
+          "explanation": "At the fixed end, M = wL²/2 + PL = 4 × 9 / 2 + 5 × 3 = 18 + 15 = 33 kN·m."
+        },
+        {
+          "id": "B2",
+          "question": "A simply supported beam of 8 m span carries a uniformly distributed load of 6 kN/m over the whole span and a point load of 20 kN at mid-span. The maximum bending moment is:",
+          "options": [
+            "68 kN·m",
+            "128 kN·m",
+            "88 kN·m",
+            "48 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "Both maxima occur at mid-span: M = wL²/8 + PL/4 = 6 × 64 / 8 + 20 × 8 / 4 = 48 + 40 = 88 kN·m."
+        },
+        {
+          "id": "B3",
+          "question": "A simply supported beam of 6 m span carries a point load of 30 kN at 2 m from the left support. The maximum bending moment in the beam is:",
+          "options": [
+            "45 kN·m",
+            "40 kN·m",
+            "60 kN·m",
+            "20 kN·m"
+          ],
+          "answer": "B",
+          "explanation": "M_max = Pab / L = 30 × 2 × 4 / 6 = 40 kN·m, under the load."
+        },
+        {
+          "id": "B4",
+          "question": "A simply supported beam AB of 6 m span carries a uniformly distributed load of 10 kN/m over the left half (3 m from A) only. The maximum bending moment in the beam is approximately:",
+          "options": [
+            "22.50 kN·m",
+            "28.13 kN·m",
+            "33.75 kN·m",
+            "25.31 kN·m"
+          ],
+          "answer": "D",
+          "explanation": "R_A = 30 × 4.5 / 6 = 22.5 kN. Shear is zero at x = 22.5 / 10 = 2.25 m from A. M_max = 22.5 × 2.25 − 10 × 2.25² / 2 = 50.625 − 25.3125 ≈ 25.31 kN·m."
+        },
+        {
+          "id": "B5",
+          "question": "A beam 8 m long rests on supports A (at the left end) and B (6 m from A), with a 2 m overhang beyond B. It carries a uniformly distributed load of 10 kN/m over its whole length. The point of contraflexure is at a distance from A of approximately:",
+          "options": [
+            "5.33 m",
+            "4.00 m",
+            "6.00 m",
+            "2.67 m"
+          ],
+          "answer": "A",
+          "explanation": "R_B × 6 = 10 × 8 × 4, so R_B = 53.33 kN and R_A = 26.67 kN. Between A and B, M = 26.67x − 5x² = 0 gives x = 26.67 / 5 ≈ 5.33 m."
+        },
+        {
+          "id": "B6",
+          "question": "A rectangular beam 100 mm wide and 200 mm deep is subjected to a bending moment of 20 kN·m. The maximum bending stress is:",
+          "options": [
+            "15 MPa",
+            "60 MPa",
+            "30 MPa",
+            "7.5 MPa"
+          ],
+          "answer": "C",
+          "explanation": "Z = bd²/6 = 100 × 200² / 6 = 666667 mm³. σ = M / Z = 20 × 10⁶ / 666667 = 30 MPa."
+        },
+        {
+          "id": "B7",
+          "question": "A simply supported beam of 4 m span carries a uniformly distributed load of 20 kN/m. If the allowable bending stress is 120 MPa, the minimum section modulus required is approximately:",
+          "options": [
+            "166.7 cm³",
+            "333.3 cm³",
+            "666.7 cm³",
+            "400.0 cm³"
+          ],
+          "answer": "B",
+          "explanation": "M = wL²/8 = 20 × 16 / 8 = 40 kN·m. Z = M / σ = 40 × 10⁶ / 120 = 333333 mm³ ≈ 333.3 cm³."
+        },
+        {
+          "id": "B8",
+          "question": "A solid circular beam of 100 mm diameter is subjected to a bending moment of 10 kN·m. The maximum bending stress is approximately:",
+          "options": [
+            "50.93 MPa",
+            "203.72 MPa",
+            "127.32 MPa",
+            "101.86 MPa"
+          ],
+          "answer": "D",
+          "explanation": "σ = 32M / (πd³) = 32 × 10 × 10⁶ / (π × 100³) ≈ 101.86 MPa."
+        },
+        {
+          "id": "B9",
+          "question": "A rectangular beam section 100 mm wide and 200 mm deep carries a shear force of 60 kN. The maximum shear stress in the section is:",
+          "options": [
+            "4.5 MPa",
+            "3.0 MPa",
+            "6.0 MPa",
+            "4.0 MPa"
+          ],
+          "answer": "A",
+          "explanation": "Average shear stress = 60000 / (100 × 200) = 3 MPa. For a rectangle, τ_max = 1.5 × average = 4.5 MPa."
+        },
+        {
+          "id": "B10",
+          "question": "A solid circular beam section of 100 mm diameter carries a shear force of 50 kN. The maximum shear stress in the section is approximately:",
+          "options": [
+            "6.37 MPa",
+            "9.55 MPa",
+            "8.49 MPa",
+            "12.73 MPa"
+          ],
+          "answer": "C",
+          "explanation": "Average shear stress = 50000 / 7854 = 6.37 MPa. For a circle, τ_max = (4/3) × average ≈ 8.49 MPa."
+        }
+      ]
+    },
+    {
+      "name": "Torsion, Springs & Deflection",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "A solid circular shaft of 50 mm diameter is subjected to a torque of 2 kN·m. The maximum shear stress in the shaft is approximately:",
+          "options": [
+            "40.74 MPa",
+            "81.49 MPa",
+            "162.97 MPa",
+            "101.86 MPa"
+          ],
+          "answer": "B",
+          "explanation": "τ = 16T / (πd³) = 16 × 2 × 10⁶ / (π × 50³) ≈ 81.49 MPa."
+        },
+        {
+          "id": "C2",
+          "question": "A solid shaft transmits 100 kW at 200 rpm. If the allowable shear stress is 60 MPa, the minimum shaft diameter required is approximately:",
+          "options": [
+            "58.7 mm",
+            "93.2 mm",
+            "64.6 mm",
+            "74.0 mm"
+          ],
+          "answer": "D",
+          "explanation": "T = 60P / (2πN) = 60 × 100000 / (2π × 200) = 4774.6 N·m. d³ = 16T / (πτ) = 16 × 4774.6 × 10³ / (π × 60) = 405285 mm³, so d ≈ 74.0 mm."
+        },
+        {
+          "id": "C3",
+          "question": "A solid shaft of 40 mm diameter and 2 m length is subjected to a torque of 500 N·m. If G = 80 GPa, the angle of twist is approximately:",
+          "options": [
+            "2.85°",
+            "1.42°",
+            "5.70°",
+            "4.56°"
+          ],
+          "answer": "A",
+          "explanation": "J = πd⁴/32 = 251327 mm⁴. θ = TL / GJ = 500 × 10³ × 2000 / (80000 × 251327) = 0.04974 rad ≈ 2.85°."
+        },
+        {
+          "id": "C4",
+          "question": "A hollow shaft has an outer diameter of 100 mm and an inner diameter of 60 mm. If the maximum shear stress is limited to 80 MPa, the torque it can transmit is approximately:",
+          "options": [
+            "15.71 kN·m",
+            "6.84 kN·m",
+            "13.67 kN·m",
+            "11.90 kN·m"
+          ],
+          "answer": "C",
+          "explanation": "T = (π/16) τ (D⁴ − d⁴) / D = (π/16) × 80 × (100⁴ − 60⁴) / 100 = 13.67 × 10⁶ N·mm ≈ 13.67 kN·m."
+        },
+        {
+          "id": "C5",
+          "question": "A hollow shaft has an inner diameter equal to half its outer diameter. For the same maximum shear stress, the ratio of the torque it can carry to that of a solid shaft of the same outer diameter is:",
+          "options": [
+            "0.75",
+            "0.9375",
+            "0.875",
+            "0.5"
+          ],
+          "answer": "B",
+          "explanation": "T_hollow / T_solid = 1 − (d/D)⁴ = 1 − 0.5⁴ = 0.9375."
+        },
+        {
+          "id": "C6",
+          "question": "A close-coiled helical spring has a wire diameter of 10 mm, a mean coil diameter of 100 mm and 10 active turns. If G = 80 GPa, its deflection under an axial load of 500 N is:",
+          "options": [
+            "25 mm",
+            "100 mm",
+            "40 mm",
+            "50 mm"
+          ],
+          "answer": "D",
+          "explanation": "δ = 8WD³n / (Gd⁴) = 8 × 500 × 100³ × 10 / (80000 × 10⁴) = 50 mm."
+        },
+        {
+          "id": "C7",
+          "question": "Two springs of stiffness 20 N/mm and 30 N/mm are connected in series. The stiffness of the combination is:",
+          "options": [
+            "12 N/mm",
+            "50 N/mm",
+            "25 N/mm",
+            "10 N/mm"
+          ],
+          "answer": "A",
+          "explanation": "In series, k = k₁k₂ / (k₁ + k₂) = 20 × 30 / 50 = 12 N/mm."
+        },
+        {
+          "id": "C8",
+          "question": "A cantilever 2 m long carries a point load of 10 kN at its free end. If EI = 20000 kN·m², the deflection at the free end is approximately:",
+          "options": [
+            "0.67 mm",
+            "2.00 mm",
+            "1.33 mm",
+            "4.00 mm"
+          ],
+          "answer": "C",
+          "explanation": "δ = PL³ / 3EI = 10 × 2³ / (3 × 20000) = 1.333 × 10⁻³ m ≈ 1.33 mm."
+        },
+        {
+          "id": "C9",
+          "question": "A simply supported beam of 4 m span carries a uniformly distributed load of 10 kN/m over the whole span. If EI = 10000 kN·m², the maximum deflection is approximately:",
+          "options": [
+            "1.67 mm",
+            "3.33 mm",
+            "6.67 mm",
+            "2.67 mm"
+          ],
+          "answer": "B",
+          "explanation": "δ = 5wL⁴ / 384EI = 5 × 10 × 4⁴ / (384 × 10000) = 3.333 × 10⁻³ m ≈ 3.33 mm."
+        },
+        {
+          "id": "C10",
+          "question": "A simply supported beam of 4 m span carries a point load of 20 kN at mid-span. If EI = 10000 kN·m², the slope at each support is:",
+          "options": [
+            "0.004 rad",
+            "0.001 rad",
+            "0.0033 rad",
+            "0.002 rad"
+          ],
+          "answer": "D",
+          "explanation": "θ = PL² / 16EI = 20 × 4² / (16 × 10000) = 0.002 rad."
+        }
+      ]
+    },
+    {
+      "name": "Principal Stresses, Columns, Pressure Vessels & Strain Energy",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "At a point in a stressed body, σx = 80 MPa (tensile), σy = 20 MPa (tensile) and τxy = 40 MPa. The major principal stress is:",
+          "options": [
+            "100 MPa",
+            "90 MPa",
+            "110 MPa",
+            "50 MPa"
+          ],
+          "answer": "A",
+          "explanation": "σ₁ = (σx + σy)/2 + √[((σx − σy)/2)² + τxy²] = 50 + √(30² + 40²) = 50 + 50 = 100 MPa."
+        },
+        {
+          "id": "D2",
+          "question": "At a point, σx = 100 MPa (tensile), σy = 40 MPa (compressive) and τxy = 30 MPa. The maximum in-plane shear stress is approximately:",
+          "options": [
+            "70.00 MPa",
+            "106.16 MPa",
+            "76.16 MPa",
+            "38.08 MPa"
+          ],
+          "answer": "C",
+          "explanation": "τ_max = √[((σx − σy)/2)² + τxy²] = √(70² + 30²) = √5800 ≈ 76.16 MPa."
+        },
+        {
+          "id": "D3",
+          "question": "A bar carries an axial tensile stress of 100 MPa. The normal stress on a plane whose normal makes an angle of 30° with the axis of the bar is:",
+          "options": [
+            "25 MPa",
+            "75 MPa",
+            "43.3 MPa",
+            "86.6 MPa"
+          ],
+          "answer": "B",
+          "explanation": "σ_n = σ cos²θ = 100 × cos² 30° = 100 × 0.75 = 75 MPa. (The shear stress on this plane is 43.3 MPa.)"
+        },
+        {
+          "id": "D4",
+          "question": "A solid circular column of 50 mm diameter and 3 m length has both ends hinged. If E = 200 GPa, its Euler buckling load is approximately:",
+          "options": [
+            "269.2 kN",
+            "16.82 kN",
+            "134.6 kN",
+            "67.29 kN"
+          ],
+          "answer": "D",
+          "explanation": "I = πd⁴/64 = 306796 mm⁴. P_cr = π²EI / L² = π² × 200000 × 306796 / 3000² = 67288 N ≈ 67.29 kN."
+        },
+        {
+          "id": "D5",
+          "question": "A long column with both ends fixed has an Euler buckling load of 400 kN. If both ends are made hinged instead, with everything else unchanged, its Euler buckling load becomes:",
+          "options": [
+            "100 kN",
+            "200 kN",
+            "800 kN",
+            "1600 kN"
+          ],
+          "answer": "A",
+          "explanation": "P_cr ∝ 1 / L_e². The effective length is L/2 for fixed ends and L for hinged ends, so the load falls to 400 × (0.5)² = 100 kN."
+        },
+        {
+          "id": "D6",
+          "question": "A column has a rectangular cross-section of 100 mm × 200 mm and an effective length of 3 m. Its slenderness ratio is approximately:",
+          "options": [
+            "52.0",
+            "30.0",
+            "103.9",
+            "207.8"
+          ],
+          "answer": "C",
+          "explanation": "The least radius of gyration is r = b / √12 = 100 / 3.464 = 28.87 mm. Slenderness ratio = L_e / r = 3000 / 28.87 ≈ 103.9."
+        },
+        {
+          "id": "D7",
+          "question": "A thin cylindrical shell of 1.2 m internal diameter carries an internal pressure of 1.5 MPa. The allowable tensile stress is 90 MPa and the efficiency of the longitudinal joint is 75%. The minimum wall thickness required is approximately:",
+          "options": [
+            "10.00 mm",
+            "13.33 mm",
+            "6.67 mm",
+            "17.78 mm"
+          ],
+          "answer": "B",
+          "explanation": "Hoop stress governs: t = pd / (2σ η) = 1.5 × 1200 / (2 × 90 × 0.75) ≈ 13.33 mm."
+        },
+        {
+          "id": "D8",
+          "question": "A thin cylindrical shell of 1000 mm diameter and 10 mm wall thickness carries an internal pressure of 2 MPa. If E = 200 GPa and Poisson's ratio is 0.3, the increase in its diameter is:",
+          "options": [
+            "0.5 mm",
+            "0.213 mm",
+            "0.85 mm",
+            "0.425 mm"
+          ],
+          "answer": "D",
+          "explanation": "Hoop stress = pd/2t = 100 MPa, longitudinal stress = pd/4t = 50 MPa. Hoop strain = (100 − 0.3 × 50) / 200000 = 4.25 × 10⁻⁴. Δd = 4.25 × 10⁻⁴ × 1000 = 0.425 mm."
+        },
+        {
+          "id": "D9",
+          "question": "A bar 1 m long with a cross-sectional area of 500 mm² carries a gradually applied axial load of 50 kN. If E = 200 GPa, the strain energy stored in the bar is:",
+          "options": [
+            "12.5 J",
+            "25 J",
+            "6.25 J",
+            "125 J"
+          ],
+          "answer": "A",
+          "explanation": "U = P²L / 2AE = (50000)² × 1000 / (2 × 500 × 200000) = 12500 N·mm = 12.5 J."
+        },
+        {
+          "id": "D10",
+          "question": "A weight of 100 N falls freely through 50 mm onto a collar at the lower end of a vertical bar 2 m long with a cross-sectional area of 200 mm². If E = 200 GPa, the maximum instantaneous stress in the bar is approximately:",
+          "options": [
+            "0.5 MPa",
+            "35.61 MPa",
+            "71.21 MPa",
+            "142.42 MPa"
+          ],
+          "answer": "C",
+          "explanation": "σ = (W/A)[1 + √(1 + 2hAE / WL)] = 0.5 × [1 + √(1 + 2 × 50 × 200 × 200000 / (100 × 2000))] = 0.5 × (1 + √20001) ≈ 71.21 MPa."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "title": "Fluid Mechanics: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Keep rough paper ready.",
+    "Take g = 9.81 m/s² and the density of water as 1000 kg/m³ unless the question says otherwise."
+  ],
+  "sections": [
+    {
+      "name": "Fluid Properties & Hydrostatics",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "A flat plate of area 0.5 m² is pulled at 1.5 m/s over a fixed plate, separated from it by a 2 mm film of oil of viscosity 0.8 Pa·s. Assuming a linear velocity profile, the force needed is:",
+          "options": [
+            "300 N",
+            "600 N",
+            "150 N",
+            "30 N"
+          ],
+          "answer": "A",
+          "explanation": "τ = μV / y = 0.8 × 1.5 / 0.002 = 600 Pa. Force = τ × A = 600 × 0.5 = 300 N."
+        },
+        {
+          "id": "A2",
+          "question": "An oil has a dynamic viscosity of 0.045 Pa·s and a specific gravity of 0.9. Its kinematic viscosity is:",
+          "options": [
+            "0.05 stokes",
+            "5.0 stokes",
+            "0.5 stokes",
+            "0.405 stokes"
+          ],
+          "answer": "C",
+          "explanation": "ν = μ / ρ = 0.045 / 900 = 5 × 10⁻⁵ m²/s. Since 1 stoke = 10⁻⁴ m²/s, ν = 0.5 stokes."
+        },
+        {
+          "id": "A3",
+          "question": "A clean glass tube of 2 mm diameter is dipped vertically in water. The surface tension is 0.0735 N/m and the contact angle is zero. Taking the unit weight of water as 9810 N/m³, the capillary rise is approximately:",
+          "options": [
+            "7.49 mm",
+            "14.98 mm",
+            "29.97 mm",
+            "3.75 mm"
+          ],
+          "answer": "B",
+          "explanation": "h = 4σ cos θ / (γ d) = 4 × 0.0735 / (9810 × 0.002) = 0.01498 m ≈ 14.98 mm."
+        },
+        {
+          "id": "A4",
+          "question": "The surface tension of water in contact with air is 0.072 N/m. The pressure inside a water droplet of 1 mm diameter, in excess of the outside pressure, is:",
+          "options": [
+            "144 Pa",
+            "576 Pa",
+            "72 Pa",
+            "288 Pa"
+          ],
+          "answer": "D",
+          "explanation": "For a droplet, Δp = 4σ / d = 4 × 0.072 / 0.001 = 288 Pa."
+        },
+        {
+          "id": "A5",
+          "question": "When the pressure on a liquid is increased by 10 MPa, its volume decreases by 0.5%. Its bulk modulus of elasticity is:",
+          "options": [
+            "2.0 GPa",
+            "0.5 GPa",
+            "20.0 GPa",
+            "5.0 GPa"
+          ],
+          "answer": "A",
+          "explanation": "K = Δp / (ΔV/V) = 10 MPa / 0.005 = 2000 MPa = 2.0 GPa."
+        },
+        {
+          "id": "A6",
+          "question": "A U-tube mercury manometer is connected to a pipe carrying water. The mercury surface in the limb joined to the pipe is 0.1 m below the pipe centre, and the mercury in the open limb stands 0.2 m higher. Taking the specific gravity of mercury as 13.6 and γ_w = 9.81 kN/m³, the gauge pressure in the pipe is approximately:",
+          "options": [
+            "26.68 kPa",
+            "27.66 kPa",
+            "25.70 kPa",
+            "1.96 kPa"
+          ],
+          "answer": "C",
+          "explanation": "Equating pressures at the lower mercury surface: p + 9.81 × 0.1 = 13.6 × 9.81 × 0.2. So p = 9.81 × (2.72 − 0.1) ≈ 25.70 kPa."
+        },
+        {
+          "id": "A7",
+          "question": "A vertical rectangular gate is 2 m wide and 3 m deep, with its top edge at the water surface. Taking γ_w = 9.81 kN/m³, the total hydrostatic force on the gate is:",
+          "options": [
+            "176.58 kN",
+            "88.29 kN",
+            "58.86 kN",
+            "44.15 kN"
+          ],
+          "answer": "B",
+          "explanation": "F = γ A h̄ = 9.81 × (2 × 3) × 1.5 = 88.29 kN."
+        },
+        {
+          "id": "A8",
+          "question": "A vertical rectangular gate is 2 m wide and 3 m deep, with its top edge 1 m below the water surface. The depth of the centre of pressure below the water surface is:",
+          "options": [
+            "2.50 m",
+            "3.00 m",
+            "2.67 m",
+            "2.80 m"
+          ],
+          "answer": "D",
+          "explanation": "h̄ = 1 + 1.5 = 2.5 m. h_cp = h̄ + I_G / (A h̄) = 2.5 + (2 × 3³ / 12) / (6 × 2.5) = 2.5 + 0.3 = 2.80 m."
+        },
+        {
+          "id": "A9",
+          "question": "A circular plate of 2 m diameter is immersed vertically in water with its centre 3 m below the surface. Taking γ_w = 9.81 kN/m³, the total hydrostatic force on one face is approximately:",
+          "options": [
+            "92.46 kN",
+            "29.43 kN",
+            "123.28 kN",
+            "46.23 kN"
+          ],
+          "answer": "A",
+          "explanation": "F = γ A h̄ = 9.81 × (π/4 × 2²) × 3 ≈ 92.46 kN."
+        },
+        {
+          "id": "A10",
+          "question": "A pressure of 200 kPa is to be expressed as a head of oil of specific gravity 0.8. Taking γ_w = 9.81 kN/m³, the head is approximately:",
+          "options": [
+            "20.39 m",
+            "16.31 m",
+            "25.48 m",
+            "250.00 m"
+          ],
+          "answer": "C",
+          "explanation": "h = p / (S γ_w) = 200 / (0.8 × 9.81) ≈ 25.48 m of oil."
+        }
+      ]
+    },
+    {
+      "name": "Buoyancy, Kinematics & Bernoulli's Equation",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "A wooden block of specific gravity 0.6 measures 1 m × 1 m in plan and is 0.5 m high. It floats in water with its 1 m × 1 m face horizontal. The depth of immersion is:",
+          "options": [
+            "0.20 m",
+            "0.30 m",
+            "0.50 m",
+            "0.60 m"
+          ],
+          "answer": "B",
+          "explanation": "Weight = weight of water displaced, so depth of immersion = S × height = 0.6 × 0.5 = 0.30 m."
+        },
+        {
+          "id": "B2",
+          "question": "A rectangular pontoon is 10 m long and 6 m wide and floats in water at a draft of 1.5 m. Its centre of gravity is 2.2 m above the base. The metacentric height is:",
+          "options": [
+            "2.00 m",
+            "2.75 m",
+            "0.75 m",
+            "0.55 m"
+          ],
+          "answer": "D",
+          "explanation": "BM = I / V = (10 × 6³ / 12) / (10 × 6 × 1.5) = 180 / 90 = 2.0 m. The centre of buoyancy is 0.75 m above the base. GM = 0.75 + 2.0 − 2.2 = 0.55 m."
+        },
+        {
+          "id": "B3",
+          "question": "A solid body weighs 500 N in air and 300 N when fully immersed in water. Its specific gravity is:",
+          "options": [
+            "2.5",
+            "1.67",
+            "0.6",
+            "1.5"
+          ],
+          "answer": "A",
+          "explanation": "Loss of weight = weight of water displaced = 200 N. Specific gravity = 500 / 200 = 2.5."
+        },
+        {
+          "id": "B4",
+          "question": "A 300 mm diameter pipe carrying water at 2 m/s divides into a 200 mm pipe and a 150 mm pipe. The velocity in the 200 mm pipe is 1.5 m/s. The velocity in the 150 mm pipe is approximately:",
+          "options": [
+            "3.50 m/s",
+            "8.00 m/s",
+            "5.33 m/s",
+            "2.67 m/s"
+          ],
+          "answer": "C",
+          "explanation": "By continuity, d₁²V₁ = d₂²V₂ + d₃²V₃: 0.3² × 2 = 0.2² × 1.5 + 0.15² × V₃. So V₃ = (0.18 − 0.06) / 0.0225 ≈ 5.33 m/s."
+        },
+        {
+          "id": "B5",
+          "question": "Water flows at 0.05 m³/s through a horizontal pipe that narrows from 200 mm to 100 mm diameter. Neglecting losses, the pressure drop between the two sections is approximately:",
+          "options": [
+            "2.39 kPa",
+            "19.00 kPa",
+            "20.26 kPa",
+            "38.00 kPa"
+          ],
+          "answer": "B",
+          "explanation": "V₁ = 0.05 / 0.03142 = 1.592 m/s and V₂ = 0.05 / 0.007854 = 6.366 m/s. p₁ − p₂ = ½ρ(V₂² − V₁²) = 500 × (40.53 − 2.53) ≈ 19.00 kPa."
+        },
+        {
+          "id": "B6",
+          "question": "A horizontal venturimeter has an inlet diameter of 200 mm and a throat diameter of 100 mm. The difference in pressure head is 0.5 m of water and C_d = 0.98. Taking g = 9.81 m/s², the discharge is approximately:",
+          "options": [
+            "25.41 L/s",
+            "24.11 L/s",
+            "99.60 L/s",
+            "24.90 L/s"
+          ],
+          "answer": "D",
+          "explanation": "a₁ = 0.03142 m², a₂ = 0.007854 m². Q = C_d a₁a₂ √(2gh) / √(a₁² − a₂²) = 0.98 × 0.008111 × 3.132 = 0.02490 m³/s ≈ 24.90 L/s."
+        },
+        {
+          "id": "B7",
+          "question": "Water issues from a small orifice under a head of 2.1 m. The jet travels 2 m horizontally while falling 0.5 m. The coefficient of velocity is approximately:",
+          "options": [
+            "0.976",
+            "0.488",
+            "0.690",
+            "0.953"
+          ],
+          "answer": "A",
+          "explanation": "C_v = x / (2√(yH)) = 2 / (2 × √(0.5 × 2.1)) = 1 / 1.0247 ≈ 0.976."
+        },
+        {
+          "id": "B8",
+          "question": "A pitot tube in a water stream shows a difference of 0.2 m between the stagnation head and the static head. Its coefficient is 0.98. Taking g = 9.81 m/s², the velocity of flow is approximately:",
+          "options": [
+            "1.98 m/s",
+            "3.84 m/s",
+            "1.94 m/s",
+            "0.98 m/s"
+          ],
+          "answer": "C",
+          "explanation": "V = C √(2gh) = 0.98 × √(2 × 9.81 × 0.2) = 0.98 × 1.981 ≈ 1.94 m/s."
+        },
+        {
+          "id": "B9",
+          "question": "A tank of uniform cross-sectional area 4 m² is emptied through an orifice of area 0.01 m² at its bottom, with C_d = 0.6. The initial depth of water is 4 m. Taking g = 9.81 m/s², the time to empty the tank is approximately:",
+          "options": [
+            "301.0 s",
+            "602.0 s",
+            "1204.0 s",
+            "361.2 s"
+          ],
+          "answer": "B",
+          "explanation": "T = 2A√H₁ / (C_d a √(2g)) = 2 × 4 × 2 / (0.6 × 0.01 × 4.429) ≈ 602.0 s."
+        },
+        {
+          "id": "B10",
+          "question": "A two-dimensional flow has the stream function ψ = 2xy, with u = ∂ψ/∂y and v = −∂ψ/∂x. The magnitude of the velocity at the point (1, 2) is approximately:",
+          "options": [
+            "6.00",
+            "2.00",
+            "4.00",
+            "4.47"
+          ],
+          "answer": "D",
+          "explanation": "u = ∂ψ/∂y = 2x = 2 and v = −∂ψ/∂x = −2y = −4. Speed = √(2² + 4²) = √20 ≈ 4.47 units."
+        }
+      ]
+    },
+    {
+      "name": "Flow Through Pipes & Dimensional Analysis",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "An oil of kinematic viscosity 1.2 × 10⁻⁵ m²/s flows through a pipe of 25 mm diameter. Taking the critical Reynolds number as 2000, the greatest mean velocity for laminar flow is:",
+          "options": [
+            "0.096 m/s",
+            "1.92 m/s",
+            "0.96 m/s",
+            "0.48 m/s"
+          ],
+          "answer": "C",
+          "explanation": "Re = Vd / ν, so V = Re ν / d = 2000 × 1.2 × 10⁻⁵ / 0.025 = 0.96 m/s."
+        },
+        {
+          "id": "C2",
+          "question": "Water flows at 2 m/s through a pipe 500 m long and 200 mm in diameter. The Darcy friction factor (f in h_f = fLV²/2gd) is 0.02. Taking g = 9.81 m/s², the head lost in friction is approximately:",
+          "options": [
+            "10.19 m",
+            "40.77 m",
+            "5.10 m",
+            "2.55 m"
+          ],
+          "answer": "A",
+          "explanation": "h_f = fLV² / (2gd) = 0.02 × 500 × 2² / (2 × 9.81 × 0.2) ≈ 10.19 m."
+        },
+        {
+          "id": "C3",
+          "question": "For laminar flow in a circular pipe at a Reynolds number of 1600, the Darcy friction factor (f = 64/Re) is:",
+          "options": [
+            "0.010",
+            "0.025",
+            "0.400",
+            "0.040"
+          ],
+          "answer": "D",
+          "explanation": "f = 64 / Re = 64 / 1600 = 0.040."
+        },
+        {
+          "id": "C4",
+          "question": "An oil of viscosity 0.1 Pa·s flows in laminar flow at a mean velocity of 1 m/s through a horizontal pipe of 100 mm diameter. The pressure drop over a length of 100 m is:",
+          "options": [
+            "16 kPa",
+            "32 kPa",
+            "64 kPa",
+            "3.2 kPa"
+          ],
+          "answer": "B",
+          "explanation": "By the Hagen-Poiseuille equation, Δp = 32μVL / d² = 32 × 0.1 × 1 × 100 / 0.1² = 32000 Pa = 32 kPa."
+        },
+        {
+          "id": "C5",
+          "question": "In a horizontal pipe of 80 mm diameter, the pressure drops by 20 kPa over a length of 50 m. The shear stress at the pipe wall is:",
+          "options": [
+            "16 Pa",
+            "4 Pa",
+            "8 Pa",
+            "32 Pa"
+          ],
+          "answer": "C",
+          "explanation": "τ₀ = Δp d / (4L) = 20000 × 0.08 / (4 × 50) = 8 Pa."
+        },
+        {
+          "id": "C6",
+          "question": "Water flowing at 4 m/s in a pipe meets a sudden enlargement, after which the velocity is 1 m/s. Taking g = 9.81 m/s², the head lost at the enlargement is approximately:",
+          "options": [
+            "0.459 m",
+            "0.765 m",
+            "0.815 m",
+            "0.153 m"
+          ],
+          "answer": "A",
+          "explanation": "h_L = (V₁ − V₂)² / 2g = (4 − 1)² / (2 × 9.81) ≈ 0.459 m."
+        },
+        {
+          "id": "C7",
+          "question": "Two pipes in series are 500 m long and 0.3 m in diameter, and 300 m long and 0.2 m in diameter, with the same friction factor. By Dupuit's equation (L/D⁵ = Σ L/d⁵), the length of an equivalent pipe of 0.25 m diameter is approximately:",
+          "options": [
+            "800.0 m",
+            "915.5 m",
+            "1432.3 m",
+            "1116.5 m"
+          ],
+          "answer": "D",
+          "explanation": "L / 0.25⁵ = 500 / 0.3⁵ + 300 / 0.2⁵ = 205761 + 937500 = 1143261. L = 1143261 × 0.25⁵ ≈ 1116.5 m."
+        },
+        {
+          "id": "C8",
+          "question": "A pipeline delivers 0.1 m³/s of water from a reservoir with a gross head of 90 m. The friction loss is 30 m. Taking γ_w = 9.81 kN/m³, the power available at the outlet is:",
+          "options": [
+            "88.29 kW",
+            "58.86 kW",
+            "29.43 kW",
+            "39.24 kW"
+          ],
+          "answer": "B",
+          "explanation": "P = γQ(H − h_f) = 9.81 × 0.1 × (90 − 30) = 58.86 kW. (With h_f = H/3 this is the condition for maximum power.)"
+        },
+        {
+          "id": "C9",
+          "question": "Water flows at 2 m/s in a rigid pipe and a valve at the end is closed instantaneously. The velocity of the pressure wave is 1400 m/s. The rise in pressure due to water hammer is:",
+          "options": [
+            "1400 kPa",
+            "5600 kPa",
+            "2800 kPa",
+            "280 kPa"
+          ],
+          "answer": "C",
+          "explanation": "Δp = ρ c V = 1000 × 1400 × 2 = 2.8 × 10⁶ Pa = 2800 kPa."
+        },
+        {
+          "id": "C10",
+          "question": "A spillway model is built to a scale of 1:25 and tested by Froude's law. If the prototype discharge is 1000 m³/s, the discharge in the model should be:",
+          "options": [
+            "0.32 m³/s",
+            "1.60 m³/s",
+            "8.00 m³/s",
+            "40.00 m³/s"
+          ],
+          "answer": "A",
+          "explanation": "For Froude similarity, Q_r = L_r^2.5. Q_m = 1000 / 25^2.5 = 1000 / 3125 = 0.32 m³/s."
+        }
+      ]
+    },
+    {
+      "name": "Open Channel Flow, Notches & Pumps",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A rectangular channel 3 m wide carries water 1.5 m deep on a bed slope of 1 in 1000. Manning's n is 0.015. The discharge is approximately:",
+          "options": [
+            "1.74 m³/s",
+            "9.49 m³/s",
+            "11.75 m³/s",
+            "7.83 m³/s"
+          ],
+          "answer": "D",
+          "explanation": "A = 4.5 m², P = 6 m, R = 0.75 m. V = (1/n) R^(2/3) S^(1/2) = (1/0.015) × 0.8255 × 0.03162 = 1.74 m/s. Q = 4.5 × 1.74 ≈ 7.83 m³/s."
+        },
+        {
+          "id": "D2",
+          "question": "An open channel has a hydraulic radius of 0.8 m and a bed slope of 0.0005. With a Chezy constant of 50, the mean velocity is:",
+          "options": [
+            "0.50 m/s",
+            "1.00 m/s",
+            "1.41 m/s",
+            "2.00 m/s"
+          ],
+          "answer": "B",
+          "explanation": "V = C √(RS) = 50 × √(0.8 × 0.0005) = 50 × 0.02 = 1.00 m/s."
+        },
+        {
+          "id": "D3",
+          "question": "A rectangular channel of the most economical section has a flow area of 8 m². The depth of flow is:",
+          "options": [
+            "1.41 m",
+            "2.83 m",
+            "2.00 m",
+            "4.00 m"
+          ],
+          "answer": "C",
+          "explanation": "For the most economical rectangular section, b = 2y, so A = 2y² = 8 and y = 2.00 m (with b = 4 m)."
+        },
+        {
+          "id": "D4",
+          "question": "A trapezoidal channel of the most economical section has side slopes at 60° to the horizontal (half of a regular hexagon). If the flow area is 15.588 m², the depth of flow is approximately:",
+          "options": [
+            "3.00 m",
+            "3.95 m",
+            "2.60 m",
+            "5.20 m"
+          ],
+          "answer": "A",
+          "explanation": "For this section, A = √3 y². So y = √(15.588 / 1.732) = √9 = 3.00 m."
+        },
+        {
+          "id": "D5",
+          "question": "A rectangular channel carries a discharge of 3 m³/s per metre width. Taking g = 9.81 m/s², the critical depth is approximately:",
+          "options": [
+            "0.459 m",
+            "0.306 m",
+            "1.458 m",
+            "0.972 m"
+          ],
+          "answer": "D",
+          "explanation": "y_c = (q² / g)^(1/3) = (9 / 9.81)^(1/3) ≈ 0.972 m."
+        },
+        {
+          "id": "D6",
+          "question": "Water flows at 4 m/s in a rectangular channel at a depth of 0.5 m. Taking g = 9.81 m/s², the Froude number is approximately:",
+          "options": [
+            "0.816",
+            "1.806",
+            "3.262",
+            "5.714"
+          ],
+          "answer": "B",
+          "explanation": "Fr = V / √(gy) = 4 / √(9.81 × 0.5) = 4 / 2.215 ≈ 1.806 (supercritical)."
+        },
+        {
+          "id": "D7",
+          "question": "A hydraulic jump forms in a horizontal rectangular channel where the depth is 0.5 m and the velocity is 4 m/s. Taking g = 9.81 m/s², the depth after the jump is approximately:",
+          "options": [
+            "0.903 m",
+            "1.277 m",
+            "1.051 m",
+            "2.102 m"
+          ],
+          "answer": "C",
+          "explanation": "Fr₁² = 4² / (9.81 × 0.5) = 3.262. y₂ = (y₁/2)[√(1 + 8Fr₁²) − 1] = 0.25 × (√27.10 − 1) = 0.25 × 4.205 ≈ 1.051 m."
+        },
+        {
+          "id": "D8",
+          "question": "In a hydraulic jump in a horizontal rectangular channel, the depths before and after the jump are 0.4 m and 2.0 m. The head lost in the jump is:",
+          "options": [
+            "1.28 m",
+            "1.60 m",
+            "0.64 m",
+            "2.56 m"
+          ],
+          "answer": "A",
+          "explanation": "h_L = (y₂ − y₁)³ / (4y₁y₂) = 1.6³ / (4 × 0.4 × 2.0) = 4.096 / 3.2 = 1.28 m."
+        },
+        {
+          "id": "D9",
+          "question": "A 90° V-notch has a head of 0.2 m over its vertex and C_d = 0.6. Taking g = 9.81 m/s², the discharge is approximately:",
+          "options": [
+            "42.26 L/s",
+            "12.68 L/s",
+            "50.71 L/s",
+            "25.36 L/s"
+          ],
+          "answer": "D",
+          "explanation": "Q = (8/15) C_d √(2g) tan(θ/2) H^2.5 = 0.5333 × 0.6 × 4.429 × 1 × 0.01789 = 0.02536 m³/s ≈ 25.36 L/s."
+        },
+        {
+          "id": "D10",
+          "question": "A pump delivers 0.05 m³/s of water against a total head of 30 m with an overall efficiency of 75%. Taking γ_w = 9.81 kN/m³, the power input to the pump is:",
+          "options": [
+            "14.72 kW",
+            "19.62 kW",
+            "11.04 kW",
+            "26.16 kW"
+          ],
+          "answer": "B",
+          "explanation": "Water power = γQH = 9.81 × 0.05 × 30 = 14.72 kW. Input power = 14.72 / 0.75 = 19.62 kW."
+        }
+      ]
+    }
+  ]
+}

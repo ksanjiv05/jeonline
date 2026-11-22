@@ -1,0 +1,514 @@
+{
+  "title": "Soil Mechanics: Numerical Practice Set 1 (Moderate to Hard)",
+  "duration": 60,
+  "marks": {
+    "correct": 1,
+    "wrong": 0.25
+  },
+  "instructions": [
+    "All 40 questions are numerical, of moderate to hard level. Keep rough paper ready.",
+    "Take the unit weight of water as 10 kN/m³ where the question says so, and use the factors given in each question."
+  ],
+  "sections": [
+    {
+      "name": "Index Properties & Classification",
+      "questions": [
+        {
+          "id": "A1",
+          "question": "A fully saturated soil has a water content of 20% and a specific gravity of solids of 2.7. Its void ratio is:",
+          "options": [
+            "0.54",
+            "0.74",
+            "0.135",
+            "0.37"
+          ],
+          "answer": "A",
+          "explanation": "Se = wG. With S = 1: e = 0.20 × 2.7 = 0.54."
+        },
+        {
+          "id": "A2",
+          "question": "A soil has a bulk unit weight of 18 kN/m³ and a water content of 20%. Its dry unit weight is:",
+          "options": [
+            "14.4 kN/m³",
+            "16.0 kN/m³",
+            "15.0 kN/m³",
+            "21.6 kN/m³"
+          ],
+          "answer": "C",
+          "explanation": "γ_d = γ / (1 + w) = 18 / 1.20 = 15.0 kN/m³."
+        },
+        {
+          "id": "A3",
+          "question": "A soil has a void ratio of 0.6. Its porosity is:",
+          "options": [
+            "60.0%",
+            "37.5%",
+            "62.5%",
+            "40.0%"
+          ],
+          "answer": "B",
+          "explanation": "n = e / (1 + e) = 0.6 / 1.6 = 0.375, i.e. 37.5%."
+        },
+        {
+          "id": "A4",
+          "question": "A soil has a specific gravity of solids of 2.65 and a void ratio of 0.65. Taking γ_w = 10 kN/m³, its saturated unit weight is:",
+          "options": [
+            "16.1 kN/m³",
+            "26.5 kN/m³",
+            "18.5 kN/m³",
+            "20.0 kN/m³"
+          ],
+          "answer": "D",
+          "explanation": "γ_sat = (G + e) γ_w / (1 + e) = (2.65 + 0.65) × 10 / 1.65 = 20.0 kN/m³."
+        },
+        {
+          "id": "A5",
+          "question": "A soil has a bulk unit weight of 18 kN/m³, a water content of 15% and a specific gravity of solids of 2.7. Taking γ_w = 10 kN/m³, its degree of saturation is approximately:",
+          "options": [
+            "55.9%",
+            "72.5%",
+            "40.5%",
+            "64.3%"
+          ],
+          "answer": "A",
+          "explanation": "γ_d = 18 / 1.15 = 15.65 kN/m³. e = Gγ_w/γ_d − 1 = 27 / 15.65 − 1 = 0.725. S = wG / e = 0.15 × 2.7 / 0.725 = 0.559, i.e. 55.9%."
+        },
+        {
+          "id": "A6",
+          "question": "A sand has maximum and minimum void ratios of 0.9 and 0.5. Its void ratio in the field is 0.6. Its relative density is:",
+          "options": [
+            "25%",
+            "60%",
+            "75%",
+            "50%"
+          ],
+          "answer": "C",
+          "explanation": "D_r = (e_max − e) / (e_max − e_min) = (0.9 − 0.6) / (0.9 − 0.5) = 0.75, i.e. 75%."
+        },
+        {
+          "id": "A7",
+          "question": "A clay has a liquid limit of 50%, a plastic limit of 25% and a natural water content of 35%. Its liquidity index is:",
+          "options": [
+            "0.6",
+            "0.4",
+            "0.7",
+            "1.4"
+          ],
+          "answer": "B",
+          "explanation": "LI = (w − PL) / (LL − PL) = (35 − 25) / (50 − 25) = 0.4. (The consistency index is 0.6.)"
+        },
+        {
+          "id": "A8",
+          "question": "The A-line of the plasticity chart is PI = 0.73 (LL − 20). For a soil with a liquid limit of 50%, the plasticity index on the A-line is:",
+          "options": [
+            "36.5",
+            "30.0",
+            "14.6",
+            "21.9"
+          ],
+          "answer": "D",
+          "explanation": "PI = 0.73 × (50 − 20) = 21.9."
+        },
+        {
+          "id": "A9",
+          "question": "From a grain size curve, D₁₀ = 0.15 mm, D₃₀ = 0.30 mm and D₆₀ = 0.60 mm. The coefficient of curvature is:",
+          "options": [
+            "1.0",
+            "4.0",
+            "2.0",
+            "0.5"
+          ],
+          "answer": "A",
+          "explanation": "C_c = D₃₀² / (D₆₀ × D₁₀) = 0.30² / (0.60 × 0.15) = 1.0. (The uniformity coefficient is D₆₀/D₁₀ = 4.0.)"
+        },
+        {
+          "id": "A10",
+          "question": "A soil has a plasticity index of 30% and 40% of its particles are finer than 2 microns. Its activity is:",
+          "options": [
+            "1.33",
+            "0.40",
+            "0.75",
+            "1.20"
+          ],
+          "answer": "C",
+          "explanation": "Activity = PI / (% clay fraction) = 30 / 40 = 0.75."
+        }
+      ]
+    },
+    {
+      "name": "Permeability, Seepage & Effective Stress",
+      "questions": [
+        {
+          "id": "B1",
+          "question": "In a constant head permeability test, 600 cm³ of water passes in 60 s through a sample 15 cm long and 50 cm² in cross-section, under a constant head of 30 cm. The coefficient of permeability is:",
+          "options": [
+            "0.01 cm/s",
+            "0.10 cm/s",
+            "0.20 cm/s",
+            "6.00 cm/s"
+          ],
+          "answer": "B",
+          "explanation": "k = QL / (A h t) = 600 × 15 / (50 × 30 × 60) = 0.10 cm/s."
+        },
+        {
+          "id": "B2",
+          "question": "In a falling head test, the sample is 10 cm long and 50 cm² in area, and the standpipe area is 1 cm². The head falls from 100 cm to 50 cm in 300 s. The coefficient of permeability is approximately:",
+          "options": [
+            "2.01 × 10⁻⁴ cm/s",
+            "9.24 × 10⁻⁴ cm/s",
+            "6.67 × 10⁻⁴ cm/s",
+            "4.62 × 10⁻⁴ cm/s"
+          ],
+          "answer": "D",
+          "explanation": "k = (aL / At) ln(h₁/h₂) = (1 × 10 / (50 × 300)) × ln 2 = 6.667 × 10⁻⁴ × 0.693 ≈ 4.62 × 10⁻⁴ cm/s."
+        },
+        {
+          "id": "B3",
+          "question": "Water flows through a soil with k = 3 × 10⁻³ cm/s under a hydraulic gradient of 0.5. The void ratio of the soil is 0.6. The seepage velocity is:",
+          "options": [
+            "4.0 × 10⁻³ cm/s",
+            "1.5 × 10⁻³ cm/s",
+            "2.5 × 10⁻³ cm/s",
+            "0.56 × 10⁻³ cm/s"
+          ],
+          "answer": "A",
+          "explanation": "Discharge velocity v = ki = 3 × 10⁻³ × 0.5 = 1.5 × 10⁻³ cm/s. Porosity n = 0.6 / 1.6 = 0.375. Seepage velocity = v / n = 4.0 × 10⁻³ cm/s."
+        },
+        {
+          "id": "B4",
+          "question": "A deposit has two horizontal layers: the upper is 2 m thick with k = 4 × 10⁻⁴ cm/s and the lower is 3 m thick with k = 1 × 10⁻⁴ cm/s. The equivalent permeability for vertical flow is approximately:",
+          "options": [
+            "2.20 × 10⁻⁴ cm/s",
+            "2.50 × 10⁻⁴ cm/s",
+            "1.43 × 10⁻⁴ cm/s",
+            "1.00 × 10⁻⁴ cm/s"
+          ],
+          "answer": "C",
+          "explanation": "k_v = ΣH / Σ(H/k) = (2 + 3) / (2/4 + 3/1) = 5 / 3.5 ≈ 1.43 × 10⁻⁴ cm/s. (For horizontal flow it is 2.20 × 10⁻⁴ cm/s.)"
+        },
+        {
+          "id": "B5",
+          "question": "A flow net under a dam has 4 flow channels and 12 equipotential drops. The head lost is 6 m and k = 1 × 10⁻⁵ m/s. The seepage per metre length of the dam is approximately:",
+          "options": [
+            "5.184 m³/day",
+            "1.728 m³/day",
+            "0.576 m³/day",
+            "17.28 m³/day"
+          ],
+          "answer": "B",
+          "explanation": "q = kH (N_f / N_d) = 10⁻⁵ × 6 × 4 / 12 = 2 × 10⁻⁵ m³/s per metre = 2 × 10⁻⁵ × 86400 = 1.728 m³/day."
+        },
+        {
+          "id": "B6",
+          "question": "A sand has a specific gravity of solids of 2.7 and a void ratio of 0.8. The critical hydraulic gradient for a quick condition is approximately:",
+          "options": [
+            "1.500",
+            "0.630",
+            "2.056",
+            "0.944"
+          ],
+          "answer": "D",
+          "explanation": "i_c = (G − 1) / (1 + e) = 1.7 / 1.8 ≈ 0.944."
+        },
+        {
+          "id": "B7",
+          "question": "The water table is 2 m below ground level. The soil above it has a unit weight of 17 kN/m³ and the soil below has a saturated unit weight of 20 kN/m³. Taking γ_w = 10 kN/m³, the effective vertical stress at a depth of 6 m is:",
+          "options": [
+            "74 kPa",
+            "114 kPa",
+            "54 kPa",
+            "94 kPa"
+          ],
+          "answer": "A",
+          "explanation": "Total stress = 17 × 2 + 20 × 4 = 114 kPa. Pore pressure = 10 × 4 = 40 kPa. Effective stress = 114 − 40 = 74 kPa."
+        },
+        {
+          "id": "B8",
+          "question": "A soil has a unit weight of 18 kN/m³ above the water table and a saturated unit weight of 20 kN/m³. The water table rises from a depth of 5 m to the ground surface. Taking γ_w = 10 kN/m³, the decrease in effective stress at a depth of 5 m is:",
+          "options": [
+            "50 kPa",
+            "10 kPa",
+            "40 kPa",
+            "90 kPa"
+          ],
+          "answer": "C",
+          "explanation": "Before: σ′ = 18 × 5 = 90 kPa. After: σ′ = (20 − 10) × 5 = 50 kPa. Decrease = 40 kPa."
+        },
+        {
+          "id": "B9",
+          "question": "Water seeps vertically upwards through a saturated soil (γ_sat = 20 kN/m³) under a hydraulic gradient of 0.3. Taking γ_w = 10 kN/m³, the effective stress at a depth of 4 m below the soil surface is:",
+          "options": [
+            "40 kPa",
+            "28 kPa",
+            "52 kPa",
+            "68 kPa"
+          ],
+          "answer": "B",
+          "explanation": "σ′ = zγ′ − i z γ_w = 4 × 10 − 0.3 × 4 × 10 = 40 − 12 = 28 kPa."
+        },
+        {
+          "id": "B10",
+          "question": "A point load of 1000 kN acts on the ground surface. By Boussinesq's equation, the vertical stress at a depth of 2 m directly below the load is approximately:",
+          "options": [
+            "250.00 kPa",
+            "79.58 kPa",
+            "477.46 kPa",
+            "119.37 kPa"
+          ],
+          "answer": "D",
+          "explanation": "σ_z = 3Q / (2πz²) = 3 × 1000 / (2π × 2²) ≈ 119.37 kPa."
+        }
+      ]
+    },
+    {
+      "name": "Compaction, Consolidation & Shear Strength",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "A compacted fill has a bulk unit weight of 19.5 kN/m³ at a water content of 14%. The maximum dry unit weight from the Proctor test is 18.0 kN/m³. The relative compaction is approximately:",
+          "options": [
+            "108.3%",
+            "92.6%",
+            "95.0%",
+            "86.0%"
+          ],
+          "answer": "C",
+          "explanation": "Field γ_d = 19.5 / 1.14 = 17.11 kN/m³. Relative compaction = 17.11 / 18.0 ≈ 95.0%."
+        },
+        {
+          "id": "C2",
+          "question": "A soil has a specific gravity of solids of 2.7. Taking γ_w = 10 kN/m³, the dry unit weight on the zero air voids line at a water content of 15% is approximately:",
+          "options": [
+            "19.22 kN/m³",
+            "27.00 kN/m³",
+            "23.48 kN/m³",
+            "16.56 kN/m³"
+          ],
+          "answer": "A",
+          "explanation": "γ_d = Gγ_w / (1 + wG) = 27 / (1 + 0.15 × 2.7) = 27 / 1.405 ≈ 19.22 kN/m³."
+        },
+        {
+          "id": "C3",
+          "question": "A normally consolidated clay layer 4 m thick has C_c = 0.3 and an initial void ratio of 1.0. The effective stress at its centre increases from 100 kPa to 200 kPa. The consolidation settlement is approximately:",
+          "options": [
+            "361.2 mm",
+            "90.3 mm",
+            "415.9 mm",
+            "180.6 mm"
+          ],
+          "answer": "D",
+          "explanation": "S = [C_c H / (1 + e₀)] log₁₀(σ′_f / σ′₀) = (0.3 × 4 / 2) × log₁₀ 2 = 0.6 × 0.301 = 0.1806 m ≈ 180.6 mm."
+        },
+        {
+          "id": "C4",
+          "question": "A clay layer 3 m thick has a coefficient of volume compressibility of 5 × 10⁻⁴ m²/kN. The effective stress increases by 60 kPa. The consolidation settlement is:",
+          "options": [
+            "30 mm",
+            "90 mm",
+            "150 mm",
+            "9 mm"
+          ],
+          "answer": "B",
+          "explanation": "S = m_v Δσ′ H = 5 × 10⁻⁴ × 60 × 3 = 0.09 m = 90 mm."
+        },
+        {
+          "id": "C5",
+          "question": "A laboratory clay sample 20 mm thick, drained on both faces, reaches 50% consolidation in 10 minutes. A layer of the same clay 4 m thick, also drained on both faces, will reach 50% consolidation in approximately:",
+          "options": [
+            "1.39 days",
+            "69.44 days",
+            "277.78 days",
+            "1111.11 days"
+          ],
+          "answer": "C",
+          "explanation": "Time is proportional to the square of the drainage path: t = 10 × (4000 / 20)² = 400000 minutes = 400000 / 1440 ≈ 277.78 days."
+        },
+        {
+          "id": "C6",
+          "question": "A clay layer 4 m thick is drained at the top only and has c_v = 2 m²/year. Using T_v = (π/4)U², the time for 50% consolidation is approximately:",
+          "options": [
+            "1.57 years",
+            "0.39 years",
+            "6.28 years",
+            "3.14 years"
+          ],
+          "answer": "A",
+          "explanation": "T_v = (π/4) × 0.5² = 0.196. Drainage path d = 4 m (single drainage). t = T_v d² / c_v = 0.196 × 16 / 2 ≈ 1.57 years."
+        },
+        {
+          "id": "C7",
+          "question": "In a consolidation test, the void ratio falls from 0.90 to 0.78 when the effective stress rises from 100 kPa to 200 kPa. The compression index is approximately:",
+          "options": [
+            "0.120",
+            "0.173",
+            "0.0012",
+            "0.399"
+          ],
+          "answer": "D",
+          "explanation": "C_c = Δe / log₁₀(σ₂/σ₁) = 0.12 / log₁₀ 2 = 0.12 / 0.301 ≈ 0.399."
+        },
+        {
+          "id": "C8",
+          "question": "A soil has c = 20 kPa and φ = 30°. The shear strength on a plane where the effective normal stress is 100 kPa is approximately:",
+          "options": [
+            "57.74 kPa",
+            "77.74 kPa",
+            "106.60 kPa",
+            "70.00 kPa"
+          ],
+          "answer": "B",
+          "explanation": "τ_f = c + σ tan φ = 20 + 100 × tan 30° = 20 + 57.74 = 77.74 kPa."
+        },
+        {
+          "id": "C9",
+          "question": "A soil with c = 20 kPa and φ = 30° is tested in a triaxial cell at a confining pressure of 100 kPa. The major principal stress at failure is approximately:",
+          "options": [
+            "300.00 kPa",
+            "340.00 kPa",
+            "369.28 kPa",
+            "346.41 kPa"
+          ],
+          "answer": "C",
+          "explanation": "σ₁ = σ₃ tan²(45° + φ/2) + 2c tan(45° + φ/2) = 100 × 3 + 2 × 20 × 1.732 = 300 + 69.28 = 369.28 kPa."
+        },
+        {
+          "id": "C10",
+          "question": "In a drained triaxial test on a clean sand (c = 0), the cell pressure is 150 kPa and the deviator stress at failure is 300 kPa. The angle of shearing resistance is:",
+          "options": [
+            "30°",
+            "45°",
+            "19.5°",
+            "60°"
+          ],
+          "answer": "A",
+          "explanation": "σ₁ = 150 + 300 = 450 kPa. sin φ = (σ₁ − σ₃) / (σ₁ + σ₃) = 300 / 600 = 0.5, so φ = 30°."
+        }
+      ]
+    },
+    {
+      "name": "Earth Pressure, Bearing Capacity & Foundations",
+      "questions": [
+        {
+          "id": "D1",
+          "question": "A smooth vertical wall 6 m high retains dry cohesionless backfill with γ = 18 kN/m³ and φ = 30°. By Rankine's theory, the total active thrust per metre length of wall is:",
+          "options": [
+            "324 kN",
+            "54 kN",
+            "162 kN",
+            "108 kN"
+          ],
+          "answer": "D",
+          "explanation": "K_a = (1 − sin 30°) / (1 + sin 30°) = 1/3. P_a = ½ K_a γ H² = ½ × (1/3) × 18 × 36 = 108 kN per metre."
+        },
+        {
+          "id": "D2",
+          "question": "A smooth vertical wall 3 m high is pushed against dry cohesionless soil with γ = 18 kN/m³ and φ = 30°. By Rankine's theory, the total passive resistance per metre length is:",
+          "options": [
+            "81 kN",
+            "243 kN",
+            "27 kN",
+            "486 kN"
+          ],
+          "answer": "B",
+          "explanation": "K_p = (1 + sin 30°) / (1 − sin 30°) = 3. P_p = ½ K_p γ H² = ½ × 3 × 18 × 9 = 243 kN per metre."
+        },
+        {
+          "id": "D3",
+          "question": "A wall retains a soil with c = 20 kPa, φ = 20° and γ = 18 kN/m³. In the active state, the depth of the tension crack is approximately:",
+          "options": [
+            "2.22 m",
+            "1.56 m",
+            "3.17 m",
+            "4.53 m"
+          ],
+          "answer": "C",
+          "explanation": "√K_a = tan(45° − φ/2) = tan 35° = 0.700. z_c = 2c / (γ √K_a) = 40 / (18 × 0.700) ≈ 3.17 m."
+        },
+        {
+          "id": "D4",
+          "question": "A smooth vertical wall 5 m high retains dry sand (γ = 18 kN/m³, φ = 30°) carrying a uniform surcharge of 20 kPa. The total active thrust per metre length is approximately:",
+          "options": [
+            "108.33 kN",
+            "75.00 kN",
+            "175.00 kN",
+            "141.67 kN"
+          ],
+          "answer": "A",
+          "explanation": "K_a = 1/3. Soil: ½ × (1/3) × 18 × 25 = 75 kN. Surcharge: K_a q H = (1/3) × 20 × 5 = 33.33 kN. Total = 108.33 kN per metre."
+        },
+        {
+          "id": "D5",
+          "question": "A smooth vertical wall 4 m high retains sand that is saturated up to the top, with γ_sat = 20 kN/m³ and φ = 30°. Taking γ_w = 10 kN/m³, the total lateral thrust (soil plus water) per metre length is approximately:",
+          "options": [
+            "53.33 kN",
+            "80.00 kN",
+            "133.33 kN",
+            "106.67 kN"
+          ],
+          "answer": "D",
+          "explanation": "Soil (submerged weight): ½ × (1/3) × (20 − 10) × 16 = 26.67 kN. Water: ½ × 10 × 16 = 80 kN. Total = 106.67 kN per metre."
+        },
+        {
+          "id": "D6",
+          "question": "A strip footing 2 m wide is founded 1.5 m deep in sand with c = 0 and γ = 18 kN/m³. The bearing capacity factors are N_q = 22.5 and N_γ = 19.7. By Terzaghi's equation, the ultimate bearing capacity is:",
+          "options": [
+            "607.5 kPa",
+            "962.1 kPa",
+            "1316.7 kPa",
+            "784.8 kPa"
+          ],
+          "answer": "B",
+          "explanation": "q_u = γD_f N_q + ½ γ B N_γ = 18 × 1.5 × 22.5 + 0.5 × 18 × 2 × 19.7 = 607.5 + 354.6 = 962.1 kPa."
+        },
+        {
+          "id": "D7",
+          "question": "A strip footing is founded 1 m deep in a saturated clay with c_u = 50 kPa, φ_u = 0 and γ = 18 kN/m³. Using Terzaghi's N_c = 5.7 and a factor of safety of 3, the net safe bearing capacity is:",
+          "options": [
+            "101 kPa",
+            "285 kPa",
+            "95 kPa",
+            "107 kPa"
+          ],
+          "answer": "C",
+          "explanation": "For φ = 0, N_q = 1 and N_γ = 0, so the net ultimate bearing capacity = c N_c = 5.7 × 50 = 285 kPa. Net safe bearing capacity = 285 / 3 = 95 kPa."
+        },
+        {
+          "id": "D8",
+          "question": "A square footing 2 m × 2 m is founded 1 m deep in a soil with c = 10 kPa and γ = 18 kN/m³. The bearing capacity factors are N_c = 37.2, N_q = 22.5 and N_γ = 19.7. By Terzaghi's equation for a square footing, the ultimate bearing capacity is approximately:",
+          "options": [
+            "1172.3 kPa",
+            "1131.6 kPa",
+            "1030.4 kPa",
+            "767.3 kPa"
+          ],
+          "answer": "A",
+          "explanation": "q_u = 1.3cN_c + γD_f N_q + 0.4γBN_γ = 1.3 × 10 × 37.2 + 18 × 1 × 22.5 + 0.4 × 18 × 2 × 19.7 = 483.6 + 405 + 283.7 ≈ 1172.3 kPa."
+        },
+        {
+          "id": "D9",
+          "question": "A bored pile 0.4 m in diameter and 10 m long is installed in clay with c_u = 50 kPa. Taking N_c = 9 at the base and an adhesion factor of 0.6, its ultimate load capacity is approximately:",
+          "options": [
+            "377.0 kN",
+            "684.9 kN",
+            "245.0 kN",
+            "433.5 kN"
+          ],
+          "answer": "D",
+          "explanation": "Base: 9 c_u A_b = 9 × 50 × (π/4 × 0.4²) = 56.5 kN. Shaft: α c_u A_s = 0.6 × 50 × (π × 0.4 × 10) = 377.0 kN. Total ≈ 433.5 kN."
+        },
+        {
+          "id": "D10",
+          "question": "In a plate load test on sand, a 0.3 m plate settles 10 mm under the design pressure. Using S_f = S_p [B_f (B_p + 0.3) / (B_p (B_f + 0.3))]², the settlement of a footing 1.5 m wide under the same pressure is approximately:",
+          "options": [
+            "50.00 mm",
+            "27.78 mm",
+            "16.67 mm",
+            "250.00 mm"
+          ],
+          "answer": "B",
+          "explanation": "Ratio = 1.5 × 0.6 / (0.3 × 1.8) = 1.667. S_f = 10 × 1.667² ≈ 27.78 mm."
+        }
+      ]
+    }
+  ]
+}

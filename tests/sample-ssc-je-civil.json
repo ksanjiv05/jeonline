@@ -1,0 +1,247 @@
+{
+  "title": "SSC JE Civil: Sample Mini Mock",
+  "duration": 20,
+  "marks": { "correct": 1, "wrong": 0.25 },
+  "instructions": [
+    "This is a short sample paper that shows how the app works. Replace it with your own question papers."
+  ],
+  "sections": [
+    {
+      "name": "General Intelligence & Reasoning",
+      "questions": [
+        {
+          "id": "R1",
+          "question": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+          "question_hi": "श्रृंखला की अगली संख्या ज्ञात कीजिए: 3, 7, 15, 31, 63, ?",
+          "options": ["125", "129", "127", "131"],
+          "answer": "C",
+          "explanation": "Each term is (previous term × 2) + 1, so 63 × 2 + 1 = 127.",
+          "explanation_hi": "प्रत्येक पद = (पिछला पद × 2) + 1, अतः 63 × 2 + 1 = 127।"
+        },
+        {
+          "id": "R2",
+          "question": "Doctor : Hospital :: Teacher : ?",
+          "question_hi": "डॉक्टर : अस्पताल :: शिक्षक : ?",
+          "options": ["Book", "Pupil", "Blackboard", "School"],
+          "options_hi": ["पुस्तक", "छात्र", "श्यामपट", "विद्यालय"],
+          "answer": "D",
+          "explanation": "A doctor works in a hospital; a teacher works in a school.",
+          "explanation_hi": "डॉक्टर अस्पताल में काम करता है; शिक्षक विद्यालय में काम करता है।"
+        },
+        {
+          "id": "R3",
+          "question": "In a certain code language, CAT is written as DBU. How is DOG written in that code?",
+          "options": ["EPH", "DPH", "EOH", "FPH"],
+          "answer": "A",
+          "explanation": "Each letter moves one place forward: D → E, O → P, G → H."
+        },
+        {
+          "id": "R4",
+          "question": "Select the odd one out: 121, 144, 169, 190",
+          "question_hi": "विषम संख्या चुनिए: 121, 144, 169, 190",
+          "options": ["121", "144", "169", "190"],
+          "answer": "D",
+          "explanation": "121, 144 and 169 are perfect squares (11<sup>2</sup>, 12<sup>2</sup>, 13<sup>2</sup>); 190 is not.",
+          "explanation_hi": "121, 144 और 169 पूर्ण वर्ग हैं (11<sup>2</sup>, 12<sup>2</sup>, 13<sup>2</sup>); 190 पूर्ण वर्ग नहीं है।"
+        },
+        {
+          "id": "R5",
+          "question": "A man walks 5 km towards North, turns right and walks 3 km, then turns right again and walks 5 km. Where is he now with respect to his starting point?",
+          "options": ["3 km West", "3 km East", "13 km East", "5 km North"],
+          "answer": "B",
+          "explanation": "He walks 5 km North, 3 km East, then 5 km South. The North and South walks cancel out, so he is 3 km East of the start."
+        },
+        {
+          "id": "R6",
+          "question": "Pointing to a man, Riya said, \"He is the son of my grandfather's only son.\" How is the man related to Riya?",
+          "options": ["Cousin", "Uncle", "Brother", "Nephew"],
+          "answer": "C",
+          "explanation": "Her grandfather's only son is Riya's father. The son of her father is her brother."
+        },
+        {
+          "id": "R7",
+          "question": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+          "options": ["42", "40", "44", "36"],
+          "answer": "A",
+          "explanation": "The terms are 1×2, 2×3, 3×4, 4×5, 5×6, so the next term is 6×7 = 42."
+        },
+        {
+          "id": "R8",
+          "question": "Find the next letter in the series: A, C, F, J, O, ?",
+          "options": ["T", "V", "S", "U"],
+          "answer": "D",
+          "explanation": "The gaps grow by one each time: +2, +3, +4, +5, +6. O is the 15th letter and 15 + 6 = 21, which is U."
+        },
+        {
+          "id": "R9",
+          "question": "If 1 January 2023 was a Sunday, what day of the week was 1 January 2024?",
+          "options": ["Sunday", "Tuesday", "Monday", "Saturday"],
+          "answer": "C",
+          "explanation": "2023 is not a leap year, so it has 365 days = 52 weeks + 1 day. The day moves forward by one, to Monday."
+        },
+        {
+          "id": "R10",
+          "question": "What is the angle between the hour hand and the minute hand of a clock at 3:30?",
+          "options": ["90°", "75°", "60°", "85°"],
+          "answer": "B",
+          "explanation": "Hour hand: 3.5 × 30° = 105°. Minute hand: 30 × 6° = 180°. The angle between them is 180° − 105° = 75°."
+        }
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "questions": [
+        {
+          "id": "G1",
+          "question": "Which Article of the Constitution of India abolishes untouchability?",
+          "options": ["Article 14", "Article 17", "Article 21", "Article 19"],
+          "answer": "B",
+          "explanation": "Article 17 abolishes untouchability and forbids its practice in any form."
+        },
+        {
+          "id": "G2",
+          "question": "The Tropic of Cancer does NOT pass through which of these states?",
+          "options": ["Jharkhand", "Mizoram", "Odisha", "Tripura"],
+          "answer": "C",
+          "explanation": "The Tropic of Cancer passes through Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura and Mizoram. It does not pass through Odisha."
+        },
+        {
+          "id": "G3",
+          "question": "Which vitamin is produced in the human skin on exposure to sunlight?",
+          "options": ["Vitamin A", "Vitamin C", "Vitamin K", "Vitamin D"],
+          "answer": "D",
+          "explanation": "Ultraviolet-B rays in sunlight help the skin make vitamin D."
+        },
+        {
+          "id": "G4",
+          "question": "What is the SI unit of electric charge?",
+          "options": ["Ampere", "Volt", "Coulomb", "Ohm"],
+          "answer": "C",
+          "explanation": "Electric charge is measured in coulombs (C). One coulomb is the charge carried by a current of 1 ampere in 1 second."
+        },
+        {
+          "id": "G5",
+          "question": "Who is known as the 'Father of the Indian Constitution'?",
+          "options": ["Jawaharlal Nehru", "Dr. B. R. Ambedkar", "Mahatma Gandhi", "Dr. Rajendra Prasad"],
+          "answer": "B",
+          "explanation": "Dr. B. R. Ambedkar chaired the Drafting Committee of the Constituent Assembly."
+        },
+        {
+          "id": "G6",
+          "question": "In which year was the Battle of Plassey fought?",
+          "options": ["1757", "1764", "1857", "1761"],
+          "answer": "A",
+          "explanation": "In 1757 the East India Company under Robert Clive defeated Siraj-ud-Daulah at Plassey. 1764 was the Battle of Buxar and 1761 the Third Battle of Panipat."
+        },
+        {
+          "id": "G7",
+          "question": "Which gas makes up the largest share of the Earth's atmosphere?",
+          "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"],
+          "answer": "C",
+          "explanation": "Nitrogen is about 78% of dry air by volume."
+        },
+        {
+          "id": "G8",
+          "question": "Which is the longest river of peninsular India?",
+          "options": ["Krishna", "Godavari", "Kaveri", "Narmada"],
+          "answer": "B",
+          "explanation": "The Godavari, about 1,465 km long, is the longest river of peninsular India and is often called the 'Dakshin Ganga'."
+        },
+        {
+          "id": "G9",
+          "question": "In which year was the Reserve Bank of India established?",
+          "options": ["1947", "1949", "1935", "1950"],
+          "answer": "C",
+          "explanation": "The RBI was set up on 1 April 1935 under the RBI Act, 1934. It was nationalised in 1949."
+        },
+        {
+          "id": "G10",
+          "question": "Which planet is known as the 'Red Planet'?",
+          "options": ["Venus", "Jupiter", "Saturn", "Mars"],
+          "answer": "D",
+          "explanation": "Iron oxide on its surface gives Mars its reddish colour."
+        }
+      ]
+    },
+    {
+      "name": "General Engineering (Civil & Structural)",
+      "questions": [
+        {
+          "id": "C1",
+          "question": "As per IS 1077, the actual (work) size of a modular brick is:",
+          "options": ["230 mm × 110 mm × 70 mm", "190 mm × 90 mm × 90 mm", "200 mm × 100 mm × 100 mm", "250 mm × 120 mm × 75 mm"],
+          "answer": "B",
+          "explanation": "The work size of a modular brick is 190 × 90 × 90 mm. With a 10 mm mortar joint its nominal size becomes 200 × 100 × 100 mm."
+        },
+        {
+          "id": "C2",
+          "question": "The initial setting time of Ordinary Portland Cement should be at least:",
+          "options": ["10 minutes", "60 minutes", "30 minutes", "600 minutes"],
+          "answer": "C",
+          "explanation": "OPC must have an initial setting time of at least 30 minutes and a final setting time of at most 600 minutes."
+        },
+        {
+          "id": "C3",
+          "question": "In cement chemistry, C<sub>3</sub>S stands for:",
+          "options": [
+            "Dicalcium silicate (2CaO·SiO<sub>2</sub>)",
+            "Tricalcium aluminate (3CaO·Al<sub>2</sub>O<sub>3</sub>)",
+            "Tetracalcium aluminoferrite (4CaO·Al<sub>2</sub>O<sub>3</sub>·Fe<sub>2</sub>O<sub>3</sub>)",
+            "Tricalcium silicate (3CaO·SiO<sub>2</sub>)"
+          ],
+          "answer": "D",
+          "explanation": "C = CaO and S = SiO<sub>2</sub>, so C<sub>3</sub>S is 3CaO·SiO<sub>2</sub>, tricalcium silicate. It gives cement most of its early strength."
+        },
+        {
+          "id": "C4",
+          "question": "The maximum bending moment in a simply supported beam of span \\(L\\) carrying a uniformly distributed load \\(w\\) per unit length over its whole span is:",
+          "options": ["\\(\\dfrac{wL^2}{2}\\)", "\\(\\dfrac{wL^2}{8}\\)", "\\(\\dfrac{wL^2}{12}\\)", "\\(\\dfrac{wL}{4}\\)"],
+          "answer": "B",
+          "explanation": "Each support carries \\(wL/2\\). At mid-span, \\(M = \\dfrac{wL}{2}\\cdot\\dfrac{L}{2} - \\dfrac{wL}{2}\\cdot\\dfrac{L}{4} = \\dfrac{wL^2}{8}\\)."
+        },
+        {
+          "id": "C5",
+          "question": "The slump test is used to measure the ______ of fresh concrete.",
+          "options": ["workability", "compressive strength", "durability", "permeability"],
+          "answer": "A",
+          "explanation": "The slump test measures the consistency, and so the workability, of fresh concrete."
+        },
+        {
+          "id": "C6",
+          "question": "As per IS 456:2000, the minimum grade of concrete for reinforced concrete under 'mild' exposure is:",
+          "options": ["M10", "M15", "M20", "M25"],
+          "answer": "C",
+          "explanation": "Table 5 of IS 456:2000 sets M20 as the minimum grade for reinforced concrete in mild exposure."
+        },
+        {
+          "id": "C7",
+          "question": "Which instrument is used to measure both horizontal and vertical angles in surveying?",
+          "options": ["Dumpy level", "Planimeter", "Plane table", "Theodolite"],
+          "answer": "D",
+          "explanation": "A theodolite measures horizontal and vertical angles. A dumpy level is used for levelling, and a planimeter measures area on a map."
+        },
+        {
+          "id": "C8",
+          "question": "Darcy's law for the flow of water through soil is valid only for ______ flow.",
+          "options": ["turbulent", "laminar", "transitional", "supercritical"],
+          "answer": "B",
+          "explanation": "Darcy's law, \\(v = k\\,i\\), assumes laminar flow through the soil pores."
+        },
+        {
+          "id": "C9",
+          "question": "The moment of inertia of a rectangular section of width \\(b\\) and depth \\(d\\) about its centroidal axis parallel to the width is:",
+          "options": ["\\(\\dfrac{bd^3}{12}\\)", "\\(\\dfrac{bd^3}{3}\\)", "\\(\\dfrac{db^3}{12}\\)", "\\(\\dfrac{bd^2}{6}\\)"],
+          "answer": "A",
+          "explanation": "\\(I = bd^3/12\\). The value \\(bd^3/3\\) is about the base, and \\(bd^2/6\\) is the section modulus."
+        },
+        {
+          "id": "C10",
+          "question": "The whole circle bearing of a line is 210°. What is its reduced (quadrantal) bearing?",
+          "options": ["N 30° E", "S 60° W", "S 30° W", "N 60° W"],
+          "answer": "C",
+          "explanation": "210° lies between 180° and 270°, the south-west quadrant. Reduced bearing = 210° − 180° = S 30° W."
+        }
+      ]
+    }
+  ]
+}

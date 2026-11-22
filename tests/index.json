@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "file": "tests/sample-ssc-je-civil.json",
+      "title": "SSC JE Civil: Sample Mini Mock (30 questions)",
+      "description": "Reasoning, General Awareness and Civil Engineering · 20 minutes · +1 / −0.25"
+    }
+  ]
+}

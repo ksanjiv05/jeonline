@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CBT Mock Test — SSC JE Practice</title>
+  <meta name="description" content="Computer based test (CBT) practice environment for SSC Junior Engineer exams. Load MCQs from a JSON file, set the timer and start.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d4f91'/%3E%3Ctext x='16' y='20.5' font-size='11' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'%3ECBT%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <noscript><p class="noscript">This test needs JavaScript. Please turn it on and reload the page.</p></noscript>
+
+  <!-- ===================== 1. SETUP ===================== -->
+  <section id="screen-setup" class="screen" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">CBT</span>
+        <div>
+          <div class="brand-title">Online Mock Test</div>
+          <div class="brand-sub">Computer based test practice for SSC Junior Engineer (JE)</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="setup-wrap">
+      <div id="resume-banner" class="banner" hidden></div>
+
+      <div class="card">
+        <h2><span class="step">1</span> Choose a question paper</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="library" role="tab" aria-selected="true">Test library</button>
+          <button class="tab" data-tab="upload" role="tab" aria-selected="false">Upload JSON</button>
+          <button class="tab" data-tab="paste" role="tab" aria-selected="false">Paste JSON</button>
+        </div>
+
+        <div class="tab-panel" data-panel="library">
+          <div id="library-list" class="library-list"><p class="muted">Loading tests…</p></div>
+        </div>
+
+        <div class="tab-panel" data-panel="upload" hidden>
+          <label id="drop-zone" class="drop-zone">
+            <input type="file" id="file-input" accept=".json,application/json" hidden>
+            <strong>Click to choose a .json file</strong>
+            <span>or drag and drop it here</span>
+          </label>
+        </div>
+
+        <div class="tab-panel" data-panel="paste" hidden>
+          <textarea id="paste-input" rows="10" spellcheck="false" placeholder='{ "title": "My Test", "sections": [ ... ] }'></textarea>
+          <div class="row-end"><button id="paste-load" class="btn">Load questions</button></div>
+        </div>
+
+        <div id="load-status" class="load-status" hidden></div>
+
+        <p class="hint">
+          Need the format?
+          <button id="format-help" class="link-btn" type="button">See the JSON format</button>
+          or
+          <button id="dl-template" class="link-btn" type="button">download a template</button>.
+        </p>
+      </div>
+
+      <div class="card" id="settings-card">
+        <h2><span class="step">2</span> Exam settings</h2>
+        <div class="grid">
+          <label class="field span-all">Test title
+            <input id="set-title" type="text" autocomplete="off">
+          </label>
+          <label class="field">Duration (minutes)
+            <input id="set-duration" type="number" min="1" max="600" step="1" inputmode="numeric">
+          </label>
+          <label class="field">Marks per correct answer
+            <input id="set-correct" type="number" min="0" step="0.25" inputmode="decimal">
+          </label>
+          <label class="field">Negative marks per wrong answer
+            <input id="set-wrong" type="number" min="0" step="0.25" inputmode="decimal">
+          </label>
+          <label class="field">Candidate name
+            <input id="set-name" type="text" placeholder="Your name" autocomplete="name">
+          </label>
+          <label class="field">Roll number
+            <input id="set-roll" type="text" placeholder="Optional" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="set-strict" checked>
+            <span><b>Real exam save mode</b>: an answer counts only after you click <i>Save &amp; Next</i> or <i>Mark for Review &amp; Next</i></span></label>
+          <label class="check"><input type="checkbox" id="set-fullscreen" checked>
+            <span>Open the test in full screen</span></label>
+          <label class="check"><input type="checkbox" id="set-instructions" checked>
+            <span>Show the instructions page before the test</span></label>
+          <label class="check"><input type="checkbox" id="set-shuffle-q">
+            <span>Shuffle questions within each section</span></label>
+          <label class="check"><input type="checkbox" id="set-shuffle-o">
+            <span>Shuffle options (leave off if options say things like "Both A and B")</span></label>
+        </div>
+
+        <div class="start-row">
+          <button id="btn-start" class="btn btn-primary btn-lg" disabled>Start test</button>
+          <span id="start-hint" class="muted">Load a question paper first.</span>
+        </div>
+      </div>
+
+      <p class="disclaimer">Independent practice tool. Not affiliated with the Staff Selection Commission or any exam agency.</p>
+    </main>
+  </section>
+
+  <!-- ===================== 2. INSTRUCTIONS ===================== -->
+  <section id="screen-instructions" class="screen" hidden>
+    <header class="exam-top">
+      <div class="exam-title" id="ins-title"></div>
+    </header>
+    <div class="ins-body">
+      <main class="ins-main" id="ins-main">
+        <h2 class="ins-h">Instructions</h2>
+        <p class="muted">Please read the instructions carefully before you begin.</p>
+        <div id="ins-content" class="ins-content"></div>
+      </main>
+      <aside class="ins-side">
+        <div class="cand-card">
+          <div class="avatar"></div>
+          <div id="ins-cand"></div>
+        </div>
+      </aside>
+    </div>
+    <footer class="ins-foot">
+      <label class="check"><input type="checkbox" id="ins-agree">
+        <span>I have read and understood the instructions, and I am ready to take the test.</span></label>
+      <div class="ins-buttons">
+        <button id="ins-back" class="btn">« Back</button>
+        <button id="ins-begin" class="btn btn-primary" disabled>I am ready to begin</button>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ===================== 3. EXAM ===================== -->
+  <section id="screen-exam" class="screen" hidden>
+    <header class="exam-top">
+      <div class="exam-title" id="ex-title"></div>
+      <div class="exam-top-actions">
+        <button class="top-btn" id="ex-instr">Instructions</button>
+        <button class="top-btn" id="ex-fullscreen">Full screen</button>
+        <button class="top-btn palette-toggle" id="ex-palette-toggle" aria-controls="ex-palette">Questions</button>
+      </div>
+    </header>
+
+    <div class="exam-body">
+      <main class="q-area">
+        <div class="sec-bar">
+          <div class="sec-label">Sections</div>
+          <div class="sec-tabs" id="ex-tabs"></div>
+          <div class="timer" id="ex-timer-wrap" role="timer" aria-live="off">Time Left: <span id="ex-timer">--:--:--</span></div>
+        </div>
+
+        <div class="q-head">
+          <div class="q-no">Question No. <span id="ex-qno"></span></div>
+          <div class="q-head-right">
+            <span class="q-marks">Marks: <span class="pos" id="ex-pos"></span> <span class="neg" id="ex-neg"></span></span>
+            <label class="lang" id="ex-lang-wrap" hidden>View in
+              <select id="ex-lang">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="q-content" id="ex-content"></div>
+
+        <footer class="q-actions">
+          <div class="qa-left">
+            <button class="btn" id="ex-mark">Mark for Review &amp; Next</button>
+            <button class="btn" id="ex-clear">Clear Response</button>
+          </div>
+          <div class="qa-right">
+            <button class="btn" id="ex-back">« Back</button>
+            <button class="btn btn-primary" id="ex-save">Save &amp; Next</button>
+          </div>
+        </footer>
+      </main>
+
+      <aside class="palette" id="ex-palette" aria-label="Question palette">
+        <div class="pal-cand">
+          <div class="avatar small"></div>
+          <div class="pal-cand-name" id="ex-cand"></div>
+        </div>
+        <div class="legend" id="ex-legend"></div>
+        <div class="pal-sec" id="ex-pal-sec"></div>
+        <div class="pal-choose">Choose a Question</div>
+        <div class="pal-grid" id="ex-grid"></div>
+        <div class="pal-foot"><button class="btn btn-submit" id="ex-submit">Submit</button></div>
+      </aside>
+      <div class="pal-backdrop" id="ex-backdrop" hidden></div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. RESULT ===================== -->
+  <section id="screen-result" class="screen" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">CBT</span>
+        <div>
+          <div class="brand-title">Result</div>
+          <div class="brand-sub">Score card and answer review</div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button id="rs-print" class="btn btn-light">Print / Save PDF</button>
+      </div>
+    </header>
+
+    <main class="result-wrap">
+      <div class="card result-head">
+        <div>
+          <h1 id="rs-title"></h1>
+          <div id="rs-meta" class="muted"></div>
+        </div>
+        <div class="score-box">
+          <div class="score-label">Your score</div>
+          <div class="score" id="rs-score"></div>
+        </div>
+      </div>
+
+      <div class="stats" id="rs-stats"></div>
+
+      <div class="card">
+        <h2>Section-wise performance</h2>
+        <div class="table-wrap"><table class="tbl" id="rs-sections"></table></div>
+      </div>
+
+      <div class="card">
+        <div class="review-head">
+          <h2>Answer review</h2>
+          <div class="filters" id="rs-filters"></div>
+        </div>
+        <div id="rs-review"></div>
+      </div>
+
+      <div class="result-actions">
+        <button id="rs-retake" class="btn btn-primary">Retake this test</button>
+        <button id="rs-home" class="btn">Load another test</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- Shared overlays -->
+  <div class="sec-tip" id="sec-tip" hidden></div>
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-head" id="modal-title"></div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-foot" id="modal-foot"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
